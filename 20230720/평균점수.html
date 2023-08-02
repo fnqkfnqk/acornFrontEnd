@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평균 점수</title>
+    <style>
+        h1{
+            background-color: olivedrab;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var kor, math, en;
+        var sum = 0;
+        
+        // 사용자에게 점수를 입력받음과 동시에 sum에 더하기
+        sum += Number(prompt("국어 점수를 입력하세요: "));
+        sum += Number(prompt("수학 점수를 입력하세요: "));
+        sum += Number(prompt("영어 점수를 입력하세요: "));
+
+        // 평균 계산
+        // toFixed()를 사용해 소수점 아래 제한
+        var avg = sum / 3;
+        document.write('<h1>평균 점수는 ', avg.toFixed(2), '점입니다.</h1>');
+        // 콘솔창에 값 출력
+        console.log('합계', sum);
+        console.log('평균', avg);
+        
+        // background-color를 설정하기 위해 변수 선언
+        var color;
+
+        // if ~ else
+        if(avg >= 90){
+            message = "A다 이놈아";
+            color = "yellow";
+        }
+        else if(avg >= 80){
+            message = "B다 이놈아";
+            color = "lightcoral";
+        }else if(avg >= 70){
+            message = "C다 이놈아";
+            color = "lightblue";
+        }else{
+            message = "재수강이다 이놈아";
+            color = "red";
+        }
+
+        document.write("<h3>" + message + "</h3>");
+        document.querySelector("h3").style.backgroundColor = color;
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소 연습</title>
+    <style>
+        ul li{
+            margin: 0;
+            padding: 0;
+            margin-bottom: 6px;
+        }
+        .proA::before, .proF::before{
+            content: "주문폭주!! ";
+            background-color: violet;
+            color: black;
+
+            font-size: 13px;
+            padding: 3px;
+            margin: 0 10px;
+            border-radius: 3px;
+        }
+        .proD::after{
+            content: "NEW!";
+            background-color: red;
+            color: white;
+
+            font-size: 15px;
+            padding: 3px;
+            margin: 0 10px;
+            border-radius: 3px;
+        }
+        .proG::after,.proH::after{
+            content: "품절!!";
+            background-color: green;
+            color: white;
+
+            font-size: 13px;
+            padding: 3px;
+            margin: 0 10px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>제품 목록</h1>
+        <ul>
+            <li class="proA">제품 A</li>
+            <li class="proB">제품 B</li>
+            <li class="proC">제품 C</li>
+            <li class="proD">제품 D</li>
+            <li class="proE">제품 E</li>
+            <li class="proF">제품 F</li>
+            <li class="proG">제품 G</li>
+            <li class="proH">제품 H</li>
+        </ul>
+    </div>
+</body>
+</html>

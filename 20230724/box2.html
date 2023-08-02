@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 - if문 사용</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        .box_close{
+            display: block;
+        }
+        /* .box_close.active{
+            display: none;
+        } */
+        .box_open{
+            display: none;
+        }
+        /* .box_open.active{
+            display: block;
+        } */
+    </style>
+</head>
+<body>
+    <img src="../images/box_close.png" class="box_close">
+    <img src="../images/box_open.png" class="box_open">
+    <button class="closeBox">close the box</button>
+    <button class="openBox">open the box</button>
+
+    <script>
+        const $closeBox = document.querySelector(".box_close");
+        const $openBox = document.querySelector(".box_open");
+        const $closeBtn = document.querySelector(".closeBox");
+        const $openBtn = document.querySelector(".openBox");
+        
+        isClick = true;
+
+        $closeBtn.addEventListener("click", function(){
+            isClick = false;
+            console.log(isClick);
+            openAndcloseBox(isClick);
+        });
+        $openBtn.addEventListener("click", function(){
+            isClick = true;
+            console.log(isClick);
+            openAndcloseBox(isClick);
+        });
+        
+        // 사실 그냥 클릭 시 바꿔도 되긴함
+        function openAndcloseBox(isClick){
+            if(isClick){
+                $openBox.style.display = "block";
+                $closeBox.style.display = "none";
+            }
+            else{
+                $closeBox.style.display = "block";
+                $openBox.style.display = "none";
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

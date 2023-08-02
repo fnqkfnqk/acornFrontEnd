@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            height: 400px;
+            background-image: url(../images/background1.jpg);
+        }
+        button{
+            background-color: rgba(245, 245, 245, 0.256);
+            color: rgb(0, 0, 0);
+            border: 1px solid rgb(187, 187, 187, 0.256);
+        }
+
+        .wrap1{
+            margin: 5px;
+            height: fit-content;
+        }
+        .swrap1{
+            display: none;
+        }
+        .wrap1:hover .swrap1{
+            display: block;
+        }
+
+        .wrap2{
+            margin: 5px;
+            height: fit-content;
+        }
+        .swrap2{
+            display: none;
+        }
+        .wrap2:hover .swrap2{
+            display: block;
+        }
+
+        .wrap3{
+            margin: 5px;
+            height: fit-content;
+        }
+        .swrap3{
+            display: none;
+        }
+        .wrap3:hover .swrap3{
+            display: block;
+        }
+
+        a{
+            text-decoration: none;
+            margin: 1px;
+            display: flex;
+            background-color: rgba(234, 234, 234, 0.223);
+            border: 0.5px solid rgba(0, 0, 0, 0.095);
+            color: black;
+            font-weight: 300;
+            /* text-align: center; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrap1">
+            <button class="menu1"> MENU1 </button>
+            <div class="swrap1">
+                <a href="#"> SUB1-1 </a>
+                <a href="#"> SUB1-2 </a>
+                <a href="#"> SUB1-3 </a>
+            </div>
+        </div>
+
+        <div class="wrap2">
+            <button class="menu2"> MENU2 </button>
+            <div class="swrap2">
+                <a href="#"> SUB2-1 </a>
+                <a href="#"> SUB2-2 </a>
+                <a href="#"> SUB2-3 </a>
+            </div>
+        </div>
+
+        <div class="wrap3">
+            <button class="menu3"> MENU3 </button>
+            <div class="swrap3">
+                <a href="#"> SUB3-1 </a>
+                <a href="#"> SUB3-2 </a>
+                <a href="#"> SUB3-3 </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

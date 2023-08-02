@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 - 토글 버튼 사용</title>
+    <style>
+        .box_close{
+            display: block;
+        }
+        .box_close.active{
+            display: none;
+        }
+        .box_open{
+            display: none;
+        }
+        .box_open.active{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="../images/box_close.png" class="box_close">
+    <img src="../images/box_open.png" class="box_open">
+    <button class="toggleBtn">토글 버튼</button>
+
+    <script>
+        const $boxClose = document.querySelector(".box_close");
+        const $boxOpen = document.querySelector(".box_open");
+        const $toggleBtn = document.querySelector(".toggleBtn");
+
+        $toggleBtn.addEventListener("click", ()=>{
+            $boxClose.classList.toggle("active");
+            $boxOpen.classList.toggle("active");
+        })
+    </script>
+</body>
+</html>

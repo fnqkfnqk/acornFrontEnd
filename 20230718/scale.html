@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scale</title>
+    <style>
+        .origin{
+            border: 1px solid;
+            width: 500px;
+            height: 500px;
+            margin: 50px;
+        }
+
+        /* 세로로 1.2배 확대 */
+        .scalex:hover{
+            transform: scaleX(1.2);
+        }
+        /* 가로로 1.2배 확대 */
+        .scaley:hover{
+            transform: scaleY(1.2)
+        }
+        /* 가로세로 0.7배 축소 */
+        .scale:hover{
+            transform: scale(0.7);
+        }
+    </style>
+</head>
+<body>  
+    <div class="origin">
+        <div class="scalex"><img src="../images/background2.jpg" width="500px" height="500px"></div>
+    </div>
+    <div class="origin">
+        <div class="scaley"><img src="../images/background2.jpg" width="500px" height="500px"></div>
+    </div>
+    <div class="origin">
+        <div class="scale"><img src="../images/background2.jpg" width="500px" height="500px"></div>
+    </div>
+</body>
+</html>

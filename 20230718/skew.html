@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> skew </title>
+    <style>
+        .origin{
+            width: 300px;
+            height: 300px;
+        }
+        .skewx:hover{
+            /* x축으로 30도 비틀기 */
+            transform: skewX(30deg);
+        }
+        .skewy:hover{
+            /* x축으로 30도 비틀기 */
+            transform: skewY(30deg);
+        }
+        .skewxy:hover{
+            /* x축으로 30도 비틀기 */
+            transform: skew(-25deg, -15deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="skewx"><img src="../images/boo.jpeg" width="300px" height="300px"></div>
+    </div>
+    <div class="origin">
+        <div class="skewy"><img src="../images/boo.jpeg" width="300px" height="300px"></div>
+    </div>
+    <div class="origin">
+        <div class="skewxy"><img src="../images/boo.jpeg" width="300px" height="300px"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .title{
+            height: 80px;
+        }
+        .title div{
+            font-size: 50px;
+            padding: 5px;
+            margin-left: 30px;
+        }
+        #wrap{
+            display: flex;
+        }
+        .clubContainer{
+            border: 1px solid rebeccapurple;
+            width: 200px;
+            height: 600px;
+        }
+        .clubContainer ul li{
+            line-height: 2px;
+        }
+        .kitContainer{
+            height: 1000px;
+            width: -webkit-calc(100% - 200px);
+            padding: 0px 20px;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            text-align: start;
+        }
+        ul li a{
+            text-decoration: none;
+            color: black;
+            line-height: 1.5;
+        }
+        .kit{
+            display: none;
+        }
+        #big{
+            display: none;
+        }
+        .bigPContainer{
+            display: flex;
+            justify-content: center;
+        }
+        figure{
+            text-align: center;
+            margin-left: 7px;
+        }
+        .Clubs{
+            display: none;
+        }
+        .League_Name{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <div>Home Kit Archive</div>
+    </div>
+    <div id="wrap">
+        <div class="clubContainer">
+            <ul>
+                <li>
+                    <a href="#" class="League_Name">Preamier League</a>
+                    <ul class="PL Clubs">
+                        <li><a href="#">Manchester United</a></li>
+                        <li><a href="#">Manchester City</a></li>
+                        <li><a href="#">Totthem</a></li>
+                        <li><a href="#">Arsenal FC</a></li>
+                        <li><a href="#">Chealse Fc</a></li>
+                        <li><a href="#">Liverpool</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="League_Name">La Liga</a>
+                    <ul class="LaLiga Clubs">
+                        <li><a href="#">Real Madrid</a></li>
+                        <li><a href="#">FC Barcelona</a></li>
+                        <li><a href="#">Atlético Madrid</a></li>
+                        <li><a href="#">Sevilla FC</a></li>
+                        <li><a href="#">Villarreal</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="League_Name">Bundesliga</a>
+                    <ul class="Bundesliga Clubs">
+                        <li><a href="#">Bayern München</a></li>
+                        <li><a href="#">Borussia Dortmund</a></li>
+                        <li><a href="#">RB Leipzig</a></li>
+                        <li><a href="#">Bayer 04 Leverkusen</a></li>
+                        <li><a href="#">Eintracht Frankfurt</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="League_Name">Serie A</a>
+                    <ul class="Serie Clubs">
+                        <li><a href="#">AC Milan</a></li>
+                        <li><a href="#">AS Roma</a></li>
+                        <li><a href="#">Juventus FC</a></li>
+                        <li><a href="#">Inter Milan</a></li>
+                        <li><a href="#">Lazio</a></li>
+                        <li><a href="#">Fiorentina</a></li>
+                        <li><a href="#">SSC Napoli</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="League_Name">League 1</a>
+                    <ul class="League1 Clubs">
+                        <li><a href="#">Paris Saint-Germain</a></li>
+                        <li><a href="#">Olympique Marseille</a></li>
+                        <li><a href="#">Olympique Lyonnais/a></li>
+                        <li><a href="#">AS Monaco</a></li>
+                        <li><a href="#">Lille LOSC</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+       
+        <div class="kitContainer">
+            <div id="subTitle">
+                <h1>2010s</h1>
+            </div>
+            <div id="imageList">
+
+            </div>
+            <div id="bigImage">
+
+            </div>
+        </div>
+            
+    </div>
+
+    <script>
+        const $leagueNames = document.querySelectorAll(".League_Name");
+
+        // 메뉴바 클릭 시 하위 목록 보이기 및 숨기기
+        for(let i=0; i<$leagueNames.length; i++){
+            $leagueNames[i].addEventListener("click", function(){
+                for(let j=0; j<$leagueNames.length; j++){
+                    if(i==j){
+                        if($leagueNames[j].nextElementSibling.style.display == "none"){
+                            $leagueNames[j].nextElementSibling.style.display = "block";    
+                        }
+                        else{
+                            $leagueNames[j].nextElementSibling.style.display = "none";
+                        }
+                    }
+                    else{
+                        $leagueNames[j].nextElementSibling.style.display = "none";
+                    }
+                }
+                console.log($leagueNames[i].nextElementSibling);
+                console.log($leagueNames[i].nextElementSibling.style.display);
+            })
+        }
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)http://127.0.0.1:5500/20230720/%ED%8F%89%EA%B7%A0%EC%A0%90%EC%88%98.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: olivedrab;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var kor, math, en;
+        var sum = 0;
+
+        sum += Number(prompt("국어 점수를 입력하세요: "));
+        sum += Number(prompt("수학 점수를 입력하세요: "));
+        sum += Number(prompt("영어 점수를 입력하세요: "));
+
+        var avg = sum / 3;
+        document.write('<h1>평균 점수는 ', avg.toFixed(2), '점입니다.</h1>');
+
+        // if ~ else
+        if(result >= 90){
+            document.write("A다 이놈아");
+        }
+        else if(result >= 80){
+            document.write("B가 이놈아");
+        }else{
+            document.write("재수강이다 이놈아");
+        }
+
+    </script><h1>평균 점수는 23.00점입니다.</h1>
+</body></html>

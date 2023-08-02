@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> if 사용 </p>
+    <img src="../images/box_close.png" id="myImage">
+    <button id="onBtn" onclick="light(1)"> 열림 </button>
+    <button id="offBtn" onclick="light(0)"> 닫힘 </button>
+
+    <script>
+        function light(sw){
+            let pic;
+
+            if(sw == 0){
+                pic = "../images/box_close.png";
+            }
+            else{
+                pic = "../images/box_open.png";
+            }
+            document.getElementById("myImage").src = pic;
+        }
+    </script>
+
+</body>
+</html>

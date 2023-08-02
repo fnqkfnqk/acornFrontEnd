@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="inntext()">innerText</button>
+    <button onclick="inhtml()">innerHTML</button>
+    <pre>
+        textContent: 속성은 요소의 텍스트 콘텐츠만 반환하거나
+        설정하고, 그 안에 있는 모든 HTML 태그 또는 요소는 무시합니다.
+        콘텐츠를 일반 텍스트로 취급합니다.
+    </pre>
+
+    <h1> 현재 시각: </h1>
+    <div id="current"></div>
+
+    <script>
+        var now = new Date();
+
+        function inntext(){
+            document.getElementById("current").innerText = now;
+        }
+        function inhtml(){
+            document.getElementById("currnet").innerHTML = "<em>" + now + "</em>";
+        }
+    </script>
+</body>
+</html>

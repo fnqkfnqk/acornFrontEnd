@@ -1,0 +1,56 @@
+<!-- 읽기 전용, 필수 속성-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>레드향 주문하기</h1>
+
+    <form action="">
+        <fieldset>
+            <legend>배송정보 151쪽</legend>
+            <ul>
+                <li>
+                    <label for="prod">주문 상품</label>
+                    <input type="text" id="prod" value="상품용 3KG" readonly>
+                    <!-- 
+                        readonly: 읽기 전용
+                    -->
+                </li>
+                <li>
+                    <label for="user_name">이름</label>
+                    <input type="text" id="user_name" autofocus required>
+                    <!-- 
+                        required: 필수 입력 함수
+                        autofocus: 새로고침 시 커서 위치
+                    -->
+                </li>
+                <li>
+                    <label for="addr">배송주소</label>
+                    <input type="text" id="addr" required>
+                </li>
+                <li>
+                    <label for="mail">이메일</label>
+                    <input type="email" id="mail" required>
+                </li>
+                <li>
+                    <label for="phone">연락처</label>
+                    <input type="tel" id="phone" placeholder="-빼고 입력하세요" required>
+                </li>
+                <li>
+                    <label for="d_day">배송 지정</label>
+                    <input type="date" id="d_day"> <small>(주문일로부터 최소 3일 이후)</small>
+                </li>
+            </ul>
+        </fieldset>
+        <br>
+        <div>
+            <input type="submit" value="주문하기">
+            <input type="reset" value="취소하기">
+        </div>
+    </form>
+</body>
+</html>

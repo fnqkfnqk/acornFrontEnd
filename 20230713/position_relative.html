@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position_relative</title>
+    <style>
+        body{
+            box-sizing: border-box;
+        }
+        .static{
+            width: 300px;
+            height: 200px;
+            background-color: deepskyblue;
+            position: static;   /* 요소를 문서의 흐름에 맞추어 배치 default */
+        }
+        .relative1{
+            width: 300px;
+            height: 200px;
+            background-color: fuchsia;
+            position: relative;
+        }
+        .relative2{
+            width: 300px;
+            height: 200px;
+            background-color: lightgreen;
+            position: relative;
+            left: 100px;
+            top: -50px;
+        }
+        .fixed{
+            width: 150px;
+            height: 150px;
+            background-color: darkslateblue;
+            position: fixed;
+            right: 50px;
+            top: 50px;
+        }
+        .sticky{
+            width: 80px;
+            height: 80px;
+            background-color: bisque;
+            position: sticky;
+            top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="static">박스1</div>
+    <div class="relative1">박스2</div>
+    <div class="relative2">박스3</div>
+    <div class="fixed">박스4 <br> 공지사항 스크롤이 생겼을 때 확인</div>
+    <div class="sticky">박스5</div>
+    
+    <!-- 
+        sticky는 해당 박스가 보여지고 스크롤을 내렸을 때 고정
+        top은 필수 조건
+    -->
+
+    <pre>
+        13일 전국에 많고 강한 비가 내리겠다.
+
+        현재 충청남부와 전북, 경남을 중심으로 곳곳에 비가 오고 있다.
+
+        오전 8시 기준 충남 보령시 외연도에는 1시간에 28㎜, 전북 군산시 어청도에는 1시간 18.5㎜ 비가 내렸다.
+
+        충남 보령시에 호우경보, 서해5도와 인천 옹진군, 충남 서천군, 전북 군산시·김제시에 호우주의보가 내려졌고 강원 동해안과 제주를 뺀 나머지 전국에는 호우예비특보가 발령된 상황이다.
+
+        중부지방에는 이날 오후부터 시간당 30~80㎜ 뇌우가 돌풍과 함께 쏟아지는 곳이 있겠다. 남부지방은 14일부터 이런 요란한 집중호우가 내리겠다.
+
+        비가 내리는 지역과 그 주변에 순간풍속 시속 55~70㎞(15~20㎧) 안팎 강풍이 불 것으로 예상된다.
+
+        13~14일 예상 강수량은 제주는 5~40㎜, 나머지 지역은 50~150㎜이다.
+
+        다만 수도권과 강원내륙·강원산지·충청·전북북부에 비가 많이 오는 곳은 이틀간 강수량이 각각 250㎜와 200㎜ 이상이겠다.
+
+        이날 아침 기온은 22~25도였다.
+
+        오전 8시 주요 도시 기온은 서울 25.9도, 인천 25.3도, 대전 25.2도, 광주 25.1도, 대구 26.3도, 울산 25.9도, 부산 25도다.
+
+        중부지방은 비가 내려 낮 기온이 크게 오르지 않겠지만 남부지방과 폭염특보가 내려진 제주는 무덥겠다.
+
+        낮 최고기온은 26~30도일 것으로 예상된다.
+
+        습해서 체감온도는 남부지방과 제주에서 각각 31도와 33도 이상이겠다.
+
+        이날 오후부터 서해상과 제주남쪽바깥먼바다에 풍속이 시속 30~60㎞(9~16㎧)에 달하는 바람이 불고 높이가 1.5~4.0ｍ에 이르는 물결이 치겠다. 14일부턴 제주해상 전역과 남해먼바다, 동해상에도 이러한 거센 풍랑이 예상된다. 특히 동해바깥먼바다는 15일 물결의 높이가 최고 5.0ｍ 이상이겠다.
+
+        당분간 대부분 해상에 돌풍이 불고 천둥과 번개가 치겠다.
+
+        남해상과 제주해상에는 너울이 유입되면서 높은 물결이 밀려와 방파제나 갯바위를 넘어들 수 있으니 유의해야 한다.
+
+    </pre>
+</body>
+</html>

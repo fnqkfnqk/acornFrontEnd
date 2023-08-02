@@ -1,0 +1,44 @@
+<!-- a 요소 색상 링크 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 방문하지 않은 링크 선택 */
+        a:link{
+            color: gray;
+            text-decoration: none;
+        }
+        /* 방문한 링크 */
+        a:visited{
+            color: darkcyan;
+        }
+        /* 링크 위에 마우스를 올렸을 때 */
+        a:hover{
+            text-decoration: underline;
+            color: red;
+        }
+        /* 포커스를 받았을 때(탭 키를 눌러서 선택) */
+        a:focus{
+            color: hotpink;
+        }
+        /* 활성 링크 선택(클릭해서 이동하는 순간)*/
+        a:active{
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p><a href="#">웹 기획</a></p>
+        <p><a href="#">웹 스토리보드</a></p>
+        <p><a href="#">웹 디자인</a></p>
+        <p><a href="#">웹 포트폴리오</a></p>
+        <p><a href="#">웹 구조</a></p>
+    </div>    
+</body>
+</html>

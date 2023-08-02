@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+
+    <script>
+        // 콘솔창 보기 단축키: command + shift + i
+        let fruit = "apple";
+        console.log("과일 이름은? " + fruit);
+
+        let fruit2 = "kiwi";
+        console.log("과일 이름은? " + fruit2);
+
+        let fruit3 = "orange";
+        console.log("과일 이름은? " + fruit3);
+
+        let fruits = ["apple", "kiwi", "orange", "banana", "grape"]
+        console.log("과일 종류는? " + fruits);
+        console.log("과일 중 세 번째 과일은? " + fruits[2]);
+        console.log("과일 중 두 번째 과일은? " + fruits[1]);
+
+        // 1번째 과일(0번 인덱스)을 pineapple로 변경
+        fruits[0] = "pineapple";
+        console.log(fruits);
+        // 3번째 과일(2번 인덱스)을 tomato로 변경
+        fruits[2] = "tomato"
+        console.log(fruits);
+
+        // pop(): 마지막에 있는 아이템을 뺀다.
+        fruits.pop();
+        console.log(fruits);
+
+        // shift(): 맨 앞의 요소를 추출한다.
+        console.log(fruits.shift());
+        console.log(fruits); 
+
+        // push(): 배열의 맨 뒤에 아이템을 추가한다.
+        fruits.push("cherry");
+        console.log(fruits);
+
+        // unshift(): 맨 앞에 요소를 추가한다.
+        fruits.unshift("수박");
+        console.log(fruits);
+
+        // includes(): 어떤 인수를 배열이 포함하고 있는지 묻는다.
+        console.log(fruits.includes("apple")); // true, false로 반환
+
+        // indexOf(): 어떤 인수가 몇 번째 인덱스에 존재하는지 묻는다.
+        console.log(fruits.indexOf("kiwi"));  // 자료형은 number
+
+        // slice(): 배열에서 인덱스를 추출할 때, 기존 배열은 변하지 않음
+        console.log(fruits.slice(2, 4));  // 4는 포함하지 않음
+        console.log(fruits);
+        console.log("1" + fruits.slice(2))  // 0번 ~ 1번을 제외한 배열
+        console.log("2" + fruits.slice(0,2));
+
+        // slice와 splice의 차이
+        let otherFruits = fruits.slice(1,3);
+        console.log("새로운 배열 ", otherFruits);
+
+        // splice(a, b): 기본의 배열을 자른다. 시작점으로부터 몇 개의 아이템을 제거할 것인지
+        console.log(fruits.splice(2, 4));
+        console.log(fruits);        
+
+              
+
+    </script>
+</body>
+</html>

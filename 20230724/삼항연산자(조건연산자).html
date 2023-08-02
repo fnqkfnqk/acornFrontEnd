@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let userNumer = prompt("숫자를 입력하세요: ");
+
+        if (userNumer != null){
+            if (userNumer % 3 == 0){
+                alert("3의 배수이다.");
+            }
+            else{
+                alert("3의 배수가 아니다.");
+            }
+        }
+        else{
+            alert("숫자를 입력해라");
+        }
+
+        // 삼항 연산자(조건 연산자)
+        if(userNumer != null)
+        (userNumer % 3 == 0) ? alert("3의 배수이다.") : alert("3의 배수가 아니다.");
+        else alert("숫자를 입력해라");
+    </script>
+    
+</body>
+</html>

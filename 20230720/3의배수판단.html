@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3의 배수 판단</title>
+</head>
+<body>
+    <script>
+        var num, color;
+        // 사용자에게 숫자 입력받기
+        num = Number(prompt("숫자를 입력하세요: "));
+
+        // 3의 배수인지 판단
+        if (num % 3 == 0){
+            message = "입력하신 숫자는 3의 배수입니다.";
+            color =  "rgb(240, 128, 219)";
+        }
+        else{
+            // 3의 배수가 아닐 때
+            message = "입력하신 숫자는 3의 배수가 아닙니다.";
+            color = "lightblue";
+        }
+
+        document.write("<h1>"+message+"</h1>");
+        document.querySelector("h1").style.color = color;
+    </script>
+</body>
+</html>

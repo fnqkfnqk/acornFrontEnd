@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .title{
+            height: 80px;
+        }
+        .title div{
+            font-size: 50px;
+            padding: 5px;
+            margin-left: 30px;
+        }
+        #wrap{
+            display: flex;
+        }
+        .clubContainer{
+            border: 1px solid rebeccapurple;
+            width: 200px;
+            height: 600px;
+
+        }
+        .kitContainer{
+            height: 1000px;
+            width: -webkit-calc(100% - 200px);
+            padding: 0px 20px;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            text-align: center;
+        }
+        ul li a{
+            text-decoration: none;
+            color: black;
+            line-height: 1.5;
+        }
+        .small_container{
+            border: 1px solid black;
+            width: fit-content;
+            padding: 5px;
+            display: flex;
+        }
+        #small1, #small2, #small3{
+            width: 100px;
+            height: 100px;
+            margin-left: 5px;
+        }
+        .kit{
+            display: none;
+        }
+        #big{
+            display: none;
+        }
+        .bigPContainer{
+            display: flex;
+            justify-content: center;
+        }
+        figure{
+            text-align: center;
+            margin-left: 7px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="title">
+        <div>Home Kit Archive</div>
+    </div>
+    <div id="wrap">
+        <div class="clubContainer">
+            <ul>
+                <li><a href="#" onclick="showKit(1)">Real Madrid</a></li>
+                <li><a href="#" onclick="showKit(2)">Manchester United</a></li>
+                <li><a href="#" onclick="showKit(3)">AC Milan</a></li>
+            </ul>
+        </div>
+       
+        <div class="kitContainer">
+            <div id="realMadrid" class="kit">
+                <h1>2010s Real Madrid Home Kit</h1>
+                <div class="small_container">
+                    <figure>
+                        <img src="../images/uniform/RM10-11.jpeg" id="small1">
+                        <figcaption>10-11 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/RM11-12.jpeg" id="small1">
+                        <figcaption>11-12 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/RM12-13.jpeg" id="small1">
+                        <figcaption>12-13 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/RM13-14.jpeg" id="small1">
+                        <figcaption>13-14 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/RM14-15.jpeg" id="small1">
+                        <figcaption>14-15 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/RM15-16.jpeg" id="small1">
+                        <figcaption>15-16 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/RM16-17.jpeg" id="small1">
+                        <figcaption>16-17 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/RM17-18.jpeg" id="small1">
+                        <figcaption>17-18 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/RM18-19.jpeg" id="small1">
+                        <figcaption>18-19 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/RM19-20.jpeg" id="small1">
+                        <figcaption>19-20 Kit</figcaption>
+                    </figure>                   
+                </div>
+            </div>
+    
+            <div id="manchestUnited" class="kit">
+                <h1>2010s Manchester United Home Kit</h1>
+                <div class="small_container">
+                    <figure>
+                        <img src="../images/uniform/MU10-11.jpeg" id="small2">
+                        <figcaption>10-11 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/MU11-12.jpeg" id="small2">
+                        <figcaption>11-12 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/MU12-13.jpeg" id="small2">
+                        <figcaption>12-13 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/MU13-14.jpeg" id="small2">
+                        <figcaption>13-14 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/MU14-15.jpeg" id="small2">
+                        <figcaption>14-15 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/MU15-16.jpeg" id="small2">
+                        <figcaption>15-16 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/MU16-17.jpeg" id="small2">
+                        <figcaption>16-17 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/MU17-18.jpeg" id="small2">
+                        <figcaption>17-18 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/MU18-19.jpeg" id="small2">
+                        <figcaption>18-19 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/MU19-20.jpeg" id="small2">
+                        <figcaption>19-20 Kit</figcaption>
+                    </figure>                       
+                </div>
+            </div>
+
+            <div id="acMilan" class="kit">
+                <h1>2010s AC Milan Home Kit</h1>
+                <div class="small_container">
+                    <figure>
+                        <img src="../images/uniform/AC10-11.jpeg" id="small3">
+                        <figcaption>10-11 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/AC11-12.jpeg" id="small3">
+                        <figcaption>11-12 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/AC12-13.jpeg" id="small3">
+                        <figcaption>12-13 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/AC13-14.jpeg" id="small3">
+                        <figcaption>13-14 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/AC14-15.jpeg" id="small3">
+                        <figcaption>14-15 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/AC15-16.jpeg" id="small3">
+                        <figcaption>15-16 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/AC16-17.jpeg" id="small3">
+                        <figcaption>16-17 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/AC17-18.jpeg" id="small3">
+                        <figcaption>17-18 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/AC18-19.jpeg" id="small3">
+                        <figcaption>18-19 Kit</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/uniform/AC19-20.jpeg" id="small3">
+                        <figcaption>19-20 Kit</figcaption>
+                    </figure>    
+                </div>
+            </div>
+            <div class="bigPContainer">
+                <img src="../images/uniform/RM10-11.jpeg" id="big">
+            </div>
+        </div>       
+    </div>
+
+    <script>
+        let kits = document.querySelectorAll(".kit");
+        let smalls1 = document.querySelectorAll("#small1");
+        let smalls2 = document.querySelectorAll("#small2");
+        let smalls3 = document.querySelectorAll("#small3");
+        let big = document.querySelector("#big");
+        let preN = -1;
+
+        // realkit
+        for(let i=0; i<smalls1.length; i++){
+            smalls1[i].addEventListener("click", changePic);
+        }
+        // mukit
+        for(let i=0; i<smalls2.length; i++){
+            smalls2[i].addEventListener("click", changePic);
+        }
+        // milankit
+        for(let i=0; i<smalls3.length; i++){
+            smalls3[i].addEventListener("click", changePic);
+        }
+        // change big picture
+        function changePic(){
+            let newSrc = this.src;
+            big.src = newSrc;
+        }
+
+        function showKit(n){
+            let kitContainer;
+
+            if (preN != n){
+                if(n==1){
+                    kitContainer = document.querySelector("#realMadrid");
+                    big.src = smalls1[0].src;
+                }
+                else if(n==2){
+                    kitContainer = document.querySelector("#manchestUnited");
+                    big.src = smalls2[0].src;
+                }
+                else if(n==3){
+                    kitContainer = document.querySelector("#acMilan");
+                    big.src = smalls3[0].src;
+                }
+
+                for(let i=0; i<kits.length; i++){
+                    kits[i].style.display = "none";
+                }
+    
+                big.style.display = "block";
+                kitContainer.style.display = "block";
+            }
+            preN = n;
+        }
+    </script>
+</body>
+</html>

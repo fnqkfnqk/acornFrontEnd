@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공부 기간 계산</title>
+    <style>
+        .wrap{
+            width: 100%;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            margin-bottom: 20px;    
+        }
+        .container{
+            width: 300px;
+            height: 310px;
+            border: 1px solid black;
+            border-radius: 10px;
+            
+        }
+        /* 날짜 선택 */
+        .startDate, .endDate{
+            width: 100%;
+            height: 120px;
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+        #endDateCal{
+            display: none;
+            margin: 0 auto;
+        }
+        #calcDate{
+            width: 100px;
+            margin-top: 4px;
+            margin-left: 100px;
+        }
+        /* 공부한 날짜 출력 */
+        #studyDate{
+            display: none;
+            text-align: center;
+        }
+        #result{
+            font-size: 90px;
+            font-weight: bold;
+            color: lightcoral;
+        }
+        .con1{
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1> 공부 기간 계산하기~~ </h1>
+        <div class="container">
+            <div id="selectContainer">
+                <form>
+                    <div class="selectDate">
+                        <div class="startDate">
+                            <h3> 시작한 날짜 </h3>
+                            <input type="date" name="startDate" id="startDateCal">
+                        </div>
+                        <div class="endDate">
+                            <h3> 마친 날짜 </h2>
+                            <div>
+                                <input type="radio" name="endDate" value="1" checked onchange="hideCal()"> 오늘
+                                <input type="radio" name="endDate" value="0" onclick="showCal()"> 직접 입력하기
+                                <input type="date" name="endDate" id="endDateCal">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <button id="calcDate" type="submit" onclick="calcDate()"> 계산하기 </button>
+            </div>
+            
+            <div id="studyDate">
+                <h1> 공부한 기간 </h1>
+                <p class="con1"> 축하합니다❗️ </p>
+                <p class="con2"> <span class="accent" id="result"> 7 </span> 일이 되었습니다.</p>
+                <p> <span class="sDate"></span> - <span class="eDate"></span></p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+
+        let startDateCal = document.querySelector("#startDateCal");
+        let endDateCal = document.querySelector("#endDateCal");
+
+        const $selectContainer = document.querySelector("#selectContainer");
+        const $studyDate = document.querySelector("#studyDate");
+
+        let result = document.querySelector("#result");
+
+        let sDate = document.querySelector(".sDate");
+        let eDate = document.querySelector(".eDate");
+
+        // 마치는 날짜 선택 달력 보이기
+        function showCal(){
+            const $endDateCal = document.querySelector("#endDateCal");
+
+            $endDateCal.style.display = "block";
+        }
+        // 마치는 날짜 선택 달력 숨기기
+        function hideCal(){
+            const $endDateCal = document.querySelector("#endDateCal");
+
+            $endDateCal.style.display = "none";
+        }
+
+        // 공부한 날짜 계산 함수
+        function calcDate(){
+
+            event.preventDefault();
+            
+            // 시작한 날짜
+            let SD = new Date(startDateCal.value);
+            let toSD = SD.getTime();
+
+            let ED;
+            let toED;
+            // console.log(startDate.value);
+            // console.log(toSD);
+
+            // 마친 날짜
+            let endDate = document.querySelector('input[name="endDate"]:checked').value;
+            // console.log(endDate);
+
+            // 마친 날짜 밀리 세컨드 계산
+            if (endDate == "1"){    // 오늘
+                ED = new Date();
+                toED = ED.getTime();
+            }
+            else{   // 선택한 날짜
+                ED = new Date(endDateCal.value);
+                toED = ED.getTime();
+            }
+
+            // 공부한 날짜
+            passedTime = Math.round((toED - toSD)/(1000*60*60*24));
+            console.log(passedTime);
+
+            $selectContainer.style.display = "none";
+            $studyDate.style.display = "block";
+
+            result.innerHTML = passedTime;
+            sDate.innerHTML = SD.toLocaleDateString();
+            eDate.innerHTML = ED.toLocaleDateString();
+        }
+
+
+        // let result = document.querySelector("#result");
+        // let now = new Date();
+        // let firstDay = new Date("2023-07-12");
+
+        // let toNow = now.getTime();
+        // let toFirstDay = firstDay.getTime();
+
+        // let passedTime = Math.round((toNow - toFirstDay)/(1000*60*60*24));
+
+        // result.innerHTML = passedTime;
+
+        // console.log(passedTime);
+    </script>
+</body>
+</html>

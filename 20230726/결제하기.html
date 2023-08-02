@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <form name="order">
+            <fieldset>
+                <legend>주문 정보</legend>
+                <ul>
+                    <li>
+                        <label for="billiingName">이름: </label>
+                        <input type="text" id="billiingName" name="billiingName">
+                    </li>
+                    <li>
+                        <label for="billingTel">연락처: </label>
+                        <input type="text" id="billingTel" name="billingTel">
+                    </li>
+                    <li>
+                        <label for="biliingAddr">주소: </label>
+                        <input type="text" id="biliingAddr" name="billingTab">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <form name="ship">
+            <fieldset>
+                <legend>배송 정보</legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="shippingInfo" name="shippingInfo">
+                        <label for="shippingInfo">주문 정보와 배송 정보가 같습니다.</label>
+                    </li>
+                    <li>
+                        <label for="shippingName">이름: </label>
+                        <input type="text" id="shippingName" name="shippingName">
+                    </li>
+                    <li>
+                        <label for="shippingTel">연락처: </label>
+                        <input type="text" id="shippingTel" name="shippingTel">
+                    </li>
+                    <li>
+                        <label for="shippingAddr">주소: </label>
+                        <input type="text" id="shippingAddr" name="shippingAddr">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <button type="submit"> 결제하기 </button>
+    </div>
+
+    <script>
+        let check = document.querySelector("#shippingInfo");
+
+        check.addEventListener("click", function(){
+            // 체크 박스 실행 시
+            if(check.checked){
+                document.querySelector("#shippingName").value = document.querySelector("#billiingName").value;
+                document.querySelector("#shippingTel").value = document.querySelector("#billingTel").value;
+                document.querySelector("#shippingAddr").value = document.querySelector("#biliingAddr").value;
+            }
+            else{
+                // 필드 내용 지움
+                document.querySelector("#shippingName").value = " ";
+                document.querySelector("#shippingTel").value = " ";
+                document.querySelector("#shippingAddr").value = " ";
+            }
+        });
+    </script>
+    
+</body>
+</html>

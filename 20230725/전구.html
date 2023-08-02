@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> onclick,addEventListener 사용 </p>
+    <img src="../images/box_close.png" id="myImage"> <br>
+    <!-- <img src="../images/box_open.png" alt=""> -->
+    <button id="onBtn"> 열기 </button>
+    <button id="offBtn"> 닫기</button>
+
+    <script>
+        let $myImage = document.getElementById("myImage");
+        let $onBtn = document.getElementById("onBtn");
+        let $offBtn = document.getElementById("offBtn");
+
+        // $onBtn.onclick = changePic;
+        // $offBtn.onclick = changePic2;
+        $onBtn.addEventListener("click", changePic);
+        $offBtn.addEventListener("click", changePic2);
+
+        function changePic(){
+            $myImage.src = "../images/box_open.png"
+        }
+        function changePic2(){
+            $myImage.src = "../images/box_close.png"
+        }
+    </script>
+</body>
+</html>

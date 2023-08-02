@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        async function postData(url){
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {'Authorization': '개인 REST KEY'},
+            });
+            return response.json();
+        }
+
+        postData('url')
+            .then((data) => {
+                console.log(data);
+            })
+    </script>
+</body>
+</html>

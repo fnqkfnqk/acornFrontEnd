@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 신청서</title>
+    <style>
+        fieldset{
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1 style="text-align: center;">회원가입을 환영합니다~!</h1>
+        <form action="">
+            <fieldset>
+                <legend style="text-align: center;">사용자 정보</legend>
+                
+                <table>
+                    <tr>
+                        <td>
+                            <label for="u_id">아이디</label>
+                        </td>
+                        <td>
+                            <input type="text" id="u_id">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="u_mail">이메일</label>
+                        </td>
+                        <td>
+                            <input type="email" id="u_mail">    
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="pwd1">비밀번호</label>
+                        </td>
+                        <td>
+                            <input type="password" id="pwd1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pwd2">비밀번호 확인</label>
+                        </td>
+                        <td>
+                            <input type="password" id="pwd2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <!-- 버튼 이미지 p.145 -->
+                            <input type="image" src="../images/login_3.png" width="70px" height="45px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="button" value="공지 창 열기" onclick="window.open('test.html')">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend style="text-align: center;">이벤트와 새로운 소식</legend>
+                <div style="text-align: center;">
+                    <input type="radio" name="mailing" id="mailing_y">
+                    <label for="mailing_y">메일 수신</label>
+                    <input type="radio" name="mailing" id="mailing_n">
+                    <label for="mailing_n">수신 안 함</label>
+                </div>
+            </fieldset>
+            
+            <br>
+            <div id="buttons" style="text-align: center;">
+                <input type="submit" value="가입하기">
+                <input type="reset" value="취소">
+            </div>
+        </form>
+    </div>    
+</body>
+
+</html>

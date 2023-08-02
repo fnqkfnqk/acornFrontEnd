@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>회원 가입</h1>
+        <form action="#" id="register">
+            <ul id="user-info">
+                <li>
+                    <label for="u-id">아이디</label>
+                    <input type="text" name="u-id" id="u-id" placeholder="4~15자리의 영문과 숫자로 입력" required> 
+                </li>
+                <li>
+                    <label for="u-email">이메일</label>
+                    <input type="text" name="u-email" id="u_email" required>
+                </li>
+                <li>
+                    <label for="u-pw1">비밀번호</label>
+                    <input type="text" name="u-pw1" id="u-pw1" placeholder="8자리 이상" required>
+                </li>
+                <li>
+                    <label for="u-pw2">비밀번호 확인</label>
+                    <input type="text" name="u-pw2" id="u-pw2" required>
+                </li>
+                <li>
+                    <label>메일링 수신</label>
+                    <label for="#"><input type="radio" name="mailing" value="yes">예</label>
+                    <label for="#"><input type="radio" name="mailing" value="no">아니오</label>
+                </li>
+            </ul>
+            <ul id="buttons">
+                <li>
+                    <button type="submit">가입하기</button>
+                </li>
+                <li>
+                    <button type="reset">취소</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    <script>
+        // 아이디를 가져와서 변수에 저장
+        // 비밀번호, 비밀번호 확인을 가쟈와서 변수에 저장 및 비교
+
+        // 아이디 if 사용해서 4~-15자리
+        let $userId = document.querySelector("#u-id");
+        let $userPw = document.querySelector("#u-pw1");
+        let $userPw2 = document.querySelector("#u-pw2");
+
+        $userId.onchange = checkId;
+        $userPw.onchange = checkPw;
+        $userPw2.onchange = isCorrectPw;
+
+
+        function checkId(){
+            if($userId.value.length < 4 || $userId.value.length >15){
+                alert("4~15자리의 영문과 숫자를 사용하세요.");  // 오류 메세지 출력
+                $userId.select();   // 다시 입력할 수 있도록 userId필드 선택(드레그)해 놓음
+            }
+        }
+
+        // 비밀번호 8자리 이상인지. 비밀번호 확인 필도와 같은지 비교
+        function checkPw(){
+            if($userPw.value.length < 8){
+                alert("비밀번호는 8자리 이상이여야 합니다.")
+                // $userPw.select();
+                $userPw.value ="";
+                $userPw.focus(); // 포커싱
+            }
+        }
+        function isCorrectPw(){
+            if(($userPw.value != $userPw2.value)){
+                alert("비밀번호가 일치하지 않습니다.")
+                $userPw2.value = "";
+                $userPw2.select();
+
+            }
+        }
+        
+    </script>
+</body>
+</html>

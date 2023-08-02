@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        fieldset{
+            width: 500px;
+            height: fit-content;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+        ul{
+            list-style: none;
+            color: green;
+        }
+        li{
+            margin-bottom: 20px;
+            height: 30px;
+            text-align: center;
+        }
+        li label{
+            width: 150px;
+            float: left;
+            text-align: right;
+            margin-right: 10px;
+        }
+        
+        .btn{
+            display: flex;
+            justify-content: space-around;
+        }
+        .reg2{
+            float: left;
+            width: 150px;
+        }
+        input[required]{
+            border: 1px red solid;
+        }
+        /* id는 #으로 선택*/
+        #u_name{
+            color: blue;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h1>겨울방학 특강 신청</h1>
+
+    <form action="">
+        <fieldset class="register">
+            <legend>수강과목</legend>
+            <ul>
+                <li>
+                    <label for="subj" class="reg">영어회화 (초급)</label>
+                    <input type="text" id="subj" value="오전 9:00~11:00" readonly class="reg2">
+                </li>
+            </ul>
+        </fieldset>
+
+        <fieldset class="applicant">
+            <legend>신청자</legend>
+            <ul>
+                <li>
+                    <label for="u_name" class="reg">이름</label>
+                    <input type="text" id="u_name" autofocus required class="reg2">
+                </li>
+                <li>
+                    <label for="u_id" class="reg">학번</label>
+                    <input type="text" id="u_id" placeholder="하이픈없이 입력" maxlength="8" required class="reg2">
+                </li>
+                <li>
+                    <label for="u_major" class="reg">학과</label>
+                    <select id="u_major" class="reg2">
+                        <option value="archi">건축공학과</option>
+                        <option value="mechani">기계공학과</option>
+                        <option value="indust">산업공학과</option>
+                        <option value="elec">전기전자공학과</option>
+                        <option value="computer">컴퓨터공학과</option>
+                        <option value="chemical">화학공학공학과</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+
+        <fieldset class="order">
+            <legend>교재 주문</legend>
+            <ul>
+                <li>
+                    <label for="book" class="reg">교재</label>
+                    <input type="number" id="book" value="1" min="1" max="3"  class="reg2" > 
+                </li>
+                <li>
+                    <label for="work_sheet" class="reg">워크시트</label>
+                    <input type="number" id="work_sheet" value="1" min="1" max="3"  class="reg2">
+                </li>
+                <li>
+                    <label for="group" class="reg">단체 주문</label>
+                    <input type="number" id="group" value="10" min="0" max="100" step="10"  class="reg2">
+                </li>
+            </ul>
+        </fieldset>
+
+        <fieldset class="btn">
+            <button type="submit" value="submit">신청 하기</button>
+            <button type="reset" value="reset">다시 쓰기</button>
+        </fieldset>
+    </form>
+</body>
+</html>

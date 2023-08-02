@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 자기소개 페이지 </title>
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+
+        .jejuhallasan_head {
+            font-family: 'Jeju Hallasan', cursive;
+        }
+        .jejuhallasan_main {
+            font-family: 'Jeju Hallasan', cursive;
+            color: darkgoldenrod;
+        }
+
+        table, td{
+            border: 1px solid #ccc;
+            border-collapse: collapse; /*테두리 한줄로*/
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        th, td{
+            padding: 15px;
+        }
+
+        tr > td:nth-child(odd){
+            width: 80px;
+        }
+        tr > td:nth-child(even){
+            width: 150px;
+        }
+        ol{
+            width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div id="image" style="text-align: center;">
+                    <img src="../images/boo.jpeg" alt="맹구">
+            </div>
+            <div id="table" style="text-align: center;">
+                <table border class="jejuhallasan_head">
+                    <tr>
+                        <th>이름</th> <td>홍근혁</td> <th>생일</th> <td>4월2일</td>
+                    </tr>
+                    <tr>
+                        <th>주소</th> <td colspan="3"> 서울시 관악구 </td>
+                    </tr>
+                    <tr>
+                        <th>좋아하는 것</th> <td colspan="3">축구, 야구, 배구</td>
+                    </tr>
+            </table> 
+            </div>
+        </header>
+
+        <main id="pr">
+            <section id="introduce" style="text-align: center;">
+                <h2 class="jejuhallasan_head">안녕하세요. 홍근혁입니다.</h2>
+                <p class="jejuhallasan_main"> 
+                    저는 정보통신공학을 전공하고 있습니다<br>
+                    인공지능 관련해서 공부를 하다가 해당 강의를 신청하게되었습니다.<br>
+                    처음 배운다 생각하고 열심히 하겠습니다.
+                </p>
+            </section>
+            <section>
+                <h4 class="jejuhallasan_head" style="text-align: center;"> 인사</h4>
+                <ol class="jejuhallasan_main">
+                    <li>저는 파이썬과 C언어를 다룰 수 있습니다.</li>
+                    <li>많은 프로젝트에서 팀장을 맡은 경험이 있습니다.</li>
+                    <li>종강까지 열심히 공부해요.</li>
+                </ol>
+            </section>
+        </main>
+        <footer id="sns" style="text-align: center;">
+            <br>
+            <a href="#" class="jejuhallasan_head"><img src="../images/instagram.jpeg" alt="인스타" width="20" height="20">instagram</a>
+            <a href="#" class="jejuhallasan_head"><img src="../images/naver_blog.png" alt="네이버블로그" width="20" height="20">naver blog</a>
+        </footer>
+    </div>
+</body>
+</html>

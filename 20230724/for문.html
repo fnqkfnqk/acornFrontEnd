@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sum = 0;
+        
+        // 썸을 1부터 5까지 더할 때
+        for (let i=0; i<6; i++){
+            sum += i;
+            document.write(sum + "<br>");
+        }
+
+        sum = 0
+        // 1~1000까지 더하기
+        // 1.for문 사용하기
+        for(let i = 0; i< 1001; i++){
+            sum += i;
+        }
+        document.write(sum + "<br>");
+        document.write(`sum은 ${sum}이다.`);
+        // 2. 수식 이용하기
+        sum = 1000*(1000+1)/2;
+        document.write(sum + "<br>");
+
+        // for 짝수만 더하기, 홀수만 더하기
+        sum = 0;
+        for(let i = 0; i < 11; i+=2){
+            sum+=i;
+        }
+        document.write(sum + "<br>");
+        
+        sum = 0;
+        for(let i = 1; i < 11; i+=2){
+            sum+=i;
+        }
+        document.write(sum + "<br>");
+
+        // 별찍기
+        for(let i=1; i<6; i++){
+            for(let j=1; j<=i; j++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+
+
+    </script>
+</body>
+</html>

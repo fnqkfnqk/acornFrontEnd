@@ -1,0 +1,637 @@
+<!-- 
+    2023.07.17
+    div -> ul로 변경
+    메뉴 리스트 추가
+    한식, 중식, 일식, 양식 - 다양화
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatDorI-부대찌개</title>
+    <style>
+
+        @import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=East+Sea+Dokdo&family=Gasoek+One&display=swap');
+        /* @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2'); */
+        @font-face {
+            font-family: 'KOTRAHOPE';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }       
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: whitesmoke;
+        }
+        header{
+            background-color: white;
+            text-align: center;
+            height: 123px;
+        }
+        main{
+            height: -webkit-calc(100% - 183px);
+            width: 100%;
+        }
+        footer{
+            display: flex;
+            justify-content: center;
+            height: 60px;
+            padding-top: 20px;
+        }
+        li{
+            /* list-style: none; */
+            line-height: 30px;
+        }
+        /*-----------------------------------------------------------------------------------------*/
+        /* 헤더부분 전체 */
+        .header_container{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+        /* 헤더부분 배경 */
+        .header_wrap{
+            background-color: white;
+            border-top: 1px solid rgb(232, 216, 197);
+            border-bottom: 2px solid #bbb;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        /* 로고, 이름을 감싸는 div */
+        .header_sub_wrap1{
+            height: 120px;
+            width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+        /* 로고 */
+        .logo{
+            position: absolute;
+            top: 19px;
+            left: 0;
+        }
+        /* 이름 */
+        .name{
+            font-family: 'Jeju Hallasan', cursive;
+            font-size: 70px;
+            color: #5ce1e6;
+        }
+        /* 메뉴 네브바 전체 감싸는 div */
+        .sub_nav{
+            position: absolute;
+            display: flex;
+            align-items: flex-start;
+
+            margin: 0;
+            padding: 0;
+            border: 0;
+            left: 0;
+            font-size: 100%;
+
+            width: 100%;
+            height: 130px;
+            color: rgb(141, 137, 137);
+            
+        }
+        /* 메뉴 네브바 위치 조정 */
+        .sub_nav_wrap{
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            left: 0;
+            width: 100%;
+        }
+        
+        /* 큰 메뉴 네브바 */
+        /* [ 소개 한식 중식 일식 양식 ]*/
+        .nav_bar{
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .nav_bar a{
+            font-family: 'Jeju Hallasan', cursive;
+            margin: 5px 20px 5px 20px;
+            text-decoration: none;
+            width: 80px;
+            height: 30px;
+            color: black;
+            position: relative;
+        }
+        .nav_bar a div{
+            left: 50%;
+            top: 50%;
+        }
+        /* 큰 메뉴 글씨 설정 */
+        .menu_bar{
+            display: flex;
+        }
+        
+        /* 메뉴 위치*/
+        .introduce, .KO, .CH, .JP, .WE{
+            display: flex;
+            flex-direction: column;
+            height: 50px;
+        }
+        
+        /* 서브 메뉴 감싸는 div */
+        .sub_KO, .sub_CH, .sub_JP, .sub_WE{
+            position: absolute;
+            left: 0;
+            top: 60px;
+            height: 200px;
+            width: 100%;
+            background-color:#2C2A29;
+            display: none;
+        }
+        
+        /* 서브 메뉴 폰트 설정 */
+        .sub_KO a, .sub_CH a, .sub_JP a, .sub_WE a{
+            color: rgb(255, 250, 250);
+            font-weight: 100;
+        }
+        /* 서브 메뉴의 서브 메뉴 설정 */
+        .KF_menu, .CH_menu, .JP_menu, .WE_menu{
+            display: flex;
+            position: absolute;
+            left: 150px;
+            top: 20px;
+            list-style: none;
+        }
+
+        /* 메뉴를 클릭했을 때 서브 메뉴 띄우기 */
+        .KO:hover .sub_KO, .CH:hover .sub_CH, .JP:hover .sub_JP, .WE:hover .sub_WE{
+            display: flex;
+        }
+
+        .KF_menu_sub a:hover, .CH_menu_sub a:hover, .JP_menu_sub a:hover, .WE_menu_sub a:hover{
+            text-decoration: underline;
+        }
+        /* 서브 메뉴의 서브 메뉴 글씨 설정 */
+        .KF_menu_sub ul li, .CH_menu_sub ul li, .JP_menu_sub ul li, .WE_menu_sub ul li{
+            list-style: none;
+            line-height: 30px;
+        }
+        /* 서브 메뉴의 서브 메뉴 글씨 설정 */
+        .KF_menu_sub ul li a, .CH_menu_sub ul li a, .JP_menu_sub ul li a, .WE_menu_sub ul li a{
+            color: rgba(188, 187, 187, 0.991);
+        }
+        .KF_menu_sub ul li a:hover, .CH_menu_sub ul li a:hover, .JP_menu_sub ul li a:hover, .WE_menu_sub ul li a:hover{
+            text-decoration: underline;
+        }
+      
+        @media screen and (min-width: 961px){ 
+            .sub_nav{
+                top: 60px;
+                height: 66px;
+            }
+        }
+        /*-----------------------------------------------------------------------------------------*/
+        /* main */
+        .main_container{
+            border: 1px solid black;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+        .main_wrap{
+            width: 1100px;
+            margin: 0 auto;
+        }
+        /* .contents_head{
+            display: flex;
+            justify-content: space-between;
+        } */
+        .contents_name{
+            font-family: 'Jeju Hallasan', cursive;
+            padding-top: 20px;
+            font-size: 50px;
+        }
+
+        .sub_menu{
+            padding-top: 20px;
+            /* width: 1100px; */
+        }
+        .sub_menu_list{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            /* list-style: none; */
+        }
+        .sub_menu li{
+            border: 1.3px solid lightgray;
+            border-radius: 10px;
+            list-style: none;
+            text-decoration: none;
+            width: 110px;
+            padding-left: 5px;
+            padding-right: 5px;
+            text-align: center;
+        }
+        .sub_menu li a{
+            text-decoration: none;
+            font-family: 'Jeju Hallasan', cursive;
+            color: black;
+        }
+        .sub_menu li:hover{
+            text-decoration: underline;
+        }
+        /* 현재 위치 페이지 버튼을 색상 표시 */
+        .sub_menu_list li:nth-child(4){
+            background-color: #5ce1e6;
+        }
+        .sub_menu_list li:nth-child(4) a{
+            color: white;
+        }
+
+        .contents_wrap1, .contents_wrap2{
+            display: flex;
+            /* margin-top: 10px; */
+        }
+        .contents_wrap1 > div{
+            margin: 20px;
+        }
+
+        .contents_img{
+            width: 500px;
+            height: 500px;
+            border: 3px solid lightgray;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* align-items: stretch; */
+            
+        }
+        .contents_img > img{
+            width: 500px;
+            height: 334px;
+            
+        }
+        .contents_list{
+            width: 500px;
+            height: 500px;
+            border: 3px solid lightgray;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: scroll;
+        }
+        .contents_list ul{
+            text-align: center;
+        }
+
+        .contents_recipe{
+            margin-left: 20px;
+            /* margin-right: 20px; */
+            width: 1046px;
+            height: 500px;
+            border: 3px solid lightgray;
+            border-radius: 10px;
+            overflow: scroll;
+        }
+        .recipe{
+            margin-left: 30px;
+            font-family: 'KOTRAHOPE';
+            font-size: 40px;
+        }
+        .recipe_list{
+            font-family: 'KOTRAHOPE';
+            line-height: 1.5;
+            padding: 20px;
+            margin-left: 40px;
+            font-size: 22px;
+        }
+        ol{
+            display: block;
+            list-style-type: decimal; 
+        }
+
+        .contents_list ul li{
+            list-style: none;
+            font-family: 'KOTRAHOPE';
+            font-size: 40px;
+            line-height: 1.5;
+        }
+        .ingredient, .difficult{
+            font-size: 22px;
+        }
+
+        /*-----------------------------------------------------------------------------------------*/
+        /* footer*/
+        .footer_menu{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .footer_menu a{
+            text-decoration: none;
+            font-weight: 500;
+            color: black;
+            margin: 15px;
+        }
+        .footer_menu .div_line{
+            width: 1px;
+            height: 16px;
+            border: 1px rgb(43, 43, 43);
+            background-color: rgb(43, 43, 43);
+            margin: auto 0;
+        }
+        /*-----------------------------------------------------------------------------------------*/
+    </style>
+</head>
+<body>
+    <div>
+        <header>
+            <div class="header_container">
+                <div class="header_wrap">
+                    <div class="header_sub_wrap1">
+                        <a href="../../index.html"><div class="logo"><img src="../../images/Matdori.png" alt="matdori" width="100px" height="100px"></div></a>
+                        <div><label for="name" class="name">MATDORI</label></div>  
+                    </div>
+                    
+                    <div class="sub_nav">
+                        <div class="sub_nav_wrap">
+                            <nav class="nav_bar">
+                                <ul class="menu_bar">
+                                    <li class="introduce"><a href="#">소개</a></li>
+
+                                    <li class="KO">
+                                        <a href="../korean_food_간단소개.html" class="korean_Food">한식</a>
+                                        <div class="sub_KO">
+                                            <ul class="KF_menu">
+                                                <li class="KF_menu_sub"><a href="../korean_food_간단소개.html">간단소개</a></li>
+                                                <li class="KF_menu_sub">
+                                                    <a href="./korean_food_김치찌개.html">찌개류</a>
+                                                    <ul>
+                                                        <li><a href="./korean_food_김치찌개.html">김치찌개</a></li>
+                                                        <li><a href="./korean_food_된장찌개.html">된장찌개</a></li>
+                                                        <li><a href="./korean_food_고추장찌개.html">고추장찌개</a></li>
+                                                        <li><a href="./korean_food_부대찌개.html">부대찌개</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="KF_menu_sub">
+                                                    <a href="../sub_2/korean_food_김치말이국수.html">면류</a>
+                                                    <ul>
+                                                        <li><a href="../sub_2/korean_food_김치말이국수.html">김치말이국수</a></li>
+                                                        <li><a href="../sub_2/korean_food_콩국수.html">콩국수</a></li>
+                                                        <li><a href="../sub_2/korean_food_냉면.html">냉면</a></li>
+                                                        <li><a href="../sub_2/korean_food_비빔국수.html">비빔국수</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="KF_menu_sub">
+                                                    <a href="../sub_3/korean_food_비빔밥.html">쌀류</a>
+                                                    <ul>
+                                                        <li><a href="../sub_3/korean_food_비빔밥.html">비빔밥</a></li>
+                                                        <li><a href="../sub_3/korean_food_김치볶음밥.html">김치볶음밥</a></li>
+                                                        <li><a href="../sub_3/korean_food_김밥.html">김밥</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="CH">
+                                        <a href="#" class="chinese_Food">중식</a>
+                                        <div class="sub_CH">
+                                            <ul class="CH_menu">
+                                                <li class="CH_menu_sub"><a href="#">간단소개</a></li>
+                                                <li class="CH_menu_sub">
+                                                    <a href="#">한국식</a>
+                                                    <ul>
+                                                        <li><a href="#">짜장면</a></li>
+                                                        <li><a href="#">짬뽕</a></li>
+                                                        <li><a href="#">볶음밥</a></li>
+                                                        <li><a href="#">탕수육</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="CH_menu_sub">
+                                                    <a href="#">일본식</a>
+                                                    <ul>
+                                                        <li><a href="#">나가사키 짬뽕</a></li>
+                                                        <li><a href="#">탄탄멘</a></li>
+                                                        <li><a href="#">잡탕밥</a></li>
+                                                        <li><a href="#">샤브샤브</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="CH_menu_sub">
+                                                    <a href="#">미국식</a>
+                                                    <ul>
+                                                        <li><a href="#">차오멘</a></li>
+                                                        <li><a href="#">프라이드 라이스</a></li>
+                                                        <li><a href="#">오렌지 치킨</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="JP">
+                                        <a href="#" class="japanese_Food">일식</a>
+                                        <div class="sub_JP">
+                                            <ul class="JP_menu">
+                                                <li class="JP_menu_sub"><a href="#">간단소개</a></li>
+                                                <li class="JP_menu_sub">
+                                                    <a href="#">면류</a>
+                                                    <ul>
+                                                        <li><a href="#">라멘</a></li>
+                                                        <li><a href="#">소바</a></li>
+                                                        <li><a href="#">우동</a></li>
+                                                        <li><a href="#">츠케멘</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="JP_menu_sub">
+                                                    <a href="#">밥류</a>
+                                                    <ul>
+                                                        <li><a href="#">스시</a></li>
+                                                        <li><a href="#">규동</a></li>
+                                                        <li><a href="#">돈부리</a></li>
+                                                        <li><a href="#">무스비</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="JP_menu_sub">
+                                                    <a href="#">튀김류</a>
+                                                    <ul>
+                                                        <li><a href="#">가라아게</a></li>
+                                                        <li><a href="#">고로케</a></li>
+                                                        <li><a href="#">돈까스</a></li>
+                                                        <li><a href="#">덴푸라</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="JP_menu_sub">
+                                                    <a href="#">고기류</a>
+                                                    <ul>
+                                                        <li><a href="#">니쿠자가</a></li>
+                                                        <li><a href="#">돈지루</a></li>
+                                                        <li><a href="#">스키야끼</a></li>
+                                                        <li><a href="#">야키니쿠</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="JP_menu_sub">
+                                                    <a href="#">해산물</a>
+                                                    <ul>
+                                                        <li><a href="#">사시미</a></li>
+                                                        <li><a href="#">타코야키</a></li>
+                                                        <li><a href="#">타코와사비</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="WE">
+                                        <a href="#" class="western_Food">양식</a>
+                                        <div class="sub_WE">
+                                            <ul class="WE_menu">
+                                                <li class="WE_menu_sub"><a href="#">간단소개</a></li>
+                                                <li class="WE_menu_sub">
+                                                    <a href="#">파스타</a>
+                                                    <ul>
+                                                        <li><a href="#">뽀모도로</a></li>                                                      
+                                                        <li><a href="#">아라비아타</a></li>                                                      
+                                                        <li><a href="#">카르보나라</a></li>                                                      
+                                                        <li><a href="#">알리오 올리오</a></li>                                                      
+                                                    </ul>
+
+                                                </li>
+                                                <li class="WE_menu_sub">
+                                                    <a href="#">피자</a>
+                                                    <ul>
+                                                        <li><a href="#">나폴리식 피자</a></li>
+                                                        <li><a href="#">로마식 피자</a></li>
+                                                        <li><a href="#">뉴욕식 피자</a></li>
+                                                        <li><a href="#">시카고식 피자</a></li>
+                                                        <li><a href="#">아르헨티나식 피자</a></li>
+                                                    </ul>
+
+                                                </li>
+                                                <li class="WE_menu_sub">
+                                                    <a href="#">리소토</a>
+                                                    <ul>
+                                                        <li><a href="#">밀라네제</a></li>
+                                                        <li><a href="#">오징어 먹물</a></li>
+                                                        <li><a href="#">페스카토라</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>    
+            <div>
+        </header>
+
+        <main>
+            <div class="main_container">
+                <div class="main_wrap">
+                    <div class="contents_head">
+                        <div class="contents_name">찌개류</div>
+                    </div>
+                    <div class="sub_menu">
+                        <ul class="sub_menu_list">
+                            <li><a href="./korean_food_김치찌개.html">김치찌개</a></li>
+                            <li><a href="./korean_food_된장찌개.html">된장찌개</a></li>
+                            <li><a href="./korean_food_고추장찌개.html">고추장찌개</a></li>
+                            <li><a href="./korean_food_부대찌개.html">부대찌개</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="contents_wrap1">
+                        <div class="contents_img">
+                            <img src="../../images/부대찌개.jpeg" alt="">
+                        </div>    
+
+                        <div class="contents_list">
+                            <ul>
+                                <li>부대찌개</li>
+                                <li>난이도
+                                    <div class="difficult">하(下)</div>
+                                </li>
+                                <li>재료
+                                    <div class="ingredient">
+                                        *부대찌개 <br>
+                                        물 3컵(540ml),
+                                        통조림햄 1캔(200g),
+                                        대파 1과 1/2대(150g),
+                                        소시지 2개(95g),
+                                        양파 1/4개(60g),
+                                        신김치 약 1/3컵(50g),
+                                        베이크드빈스 1과 1/2큰술(30g),
+                                        체다슬라이스치즈 1장(20g),<br><br>
+
+                                        *양념장<br>
+                                        간마늘 1큰술(20g),
+                                        굵은 고춧가루 2큰술(16g),
+                                        고추장 약 1/2큰술(12g),
+                                        된장 약 1/2큰술(12g),
+                                        국간장 약 1큰술(12g),
+                                        후춧가루 약간<br><br>
+
+                                        *추가재료<br>
+                                        라면 1개,
+                                        정수물 1컵(180ml)
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="contents_wrap2">
+                        <div class="contents_recipe">
+                            <div class="recipe">레시피</div>
+                            <div class="recipe_list">
+                                <ol type="1">
+                                    <li>대파는 길게 반 갈라 4cm 길이로 썬다.</li>
+                                    <li>양파는 두께 0.4cm로 채 썬다.</li>
+                                    <li>소시지 1개는 두께 0.4cm로  어슷썰기 하고, 나머지 1개는 길게 4등분 하여 3cm 정도 길이로 자른다.</li>
+                                    <li>통조림 햄 1/3개는 두께 0.4cm 정도로 편 썰고,1/3개는 두께 0.5cm 정도로 채 썬다.</li>
+                                    <li>나머지 1/3개의 통조림 햄은 비닐봉지에 넣고 손바닥으로 으깨어 준비한다.</li>
+                                    <li>냄비에 대파, 양파를 깔고 손질한 소시지와 햄을 올린다. </li>
+                                    <li>양념장 재료와 김치를 냄비에 넣고 베이크드빈스를 올린다.</li>
+                                    <li>물을 넣고 슬라이스치즈를 올린 후 강 불에 끓인다.</li>
+                                    <li>찌개가 끓으면 가스 버너로 옮겨 강불에 약 3분 정도 끓여 완성한다.</li>
+                                    <li>라면을 넣을 경우 끓었을 때 물 1컵을 넣고 다시 끓으면 면을 넣어 익힌다.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <ul class="footer_menu">
+                <li><a href="#">회사소개</a></li>
+                <div class="div_line"></div>
+                <li><a href="#">이용약관</a></li>
+                <div class="div_line"></div>
+                <li><a href="#">고객센터</a></li>
+                <div class="div_line"></div>
+                <li><a href="#">MatDorI.Corp</a></li>
+                </ul>
+        </footer>
+    </div>
+    
+</body>
+</html>

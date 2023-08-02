@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cImg{
+            width: 300px;
+            height: 500px;
+        }
+        .andImg{
+            width: 300px;
+            height: 300px;
+        }
+        #detailBox_C, #detailBox_And{
+            display: none;
+        }
+        .projectList{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="projectWrap">
+        <ul class="projectList">
+            <li>
+                <div class="cProject">
+                    <img class="cImg" src="../images/cProject.png" alt="">
+                    <button class="cProject_name" id="showD1" onclick="showDetail_C()">전지적 너굴 시점</button>
+                    <div id="detailBox_C">
+                        <div>
+                            <h2>
+                                개발도구: Visual Studio <br>
+                                개발언어: C
+                            </h2>
+                            <p>프로젝트 기간: 2020.05 ~ 2020.06</p>
+                            <h3>기능</h3>
+                            <p>
+                                <ol>
+                                    <li>이미지를 아스키코드로 변환하여 콘솔 창에 이미지 출력 -> 애니메이션 효과</li>
+                                    <li>게임 종료 시 메모장을 사용해 데이터 저장</li>
+                                    <li>게임 이어하기 시 메모장에서 게임 데이터를 불러오기</li>
+                                </ol>
+                            </p>
+                        </div>
+                        <div class="">
+                            <button id="hideD" onclick="hideDetail_C()">상세 정보 해제</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="androidProject">
+                    <img class="andImg" src="../images/androidProject.png">
+                    <button class="andProject_name" id="showD2" onclick="showDetail_And()">습관만들기 어플</button>
+                    <div id="detailBox_And">
+                        <h2>
+                            개발도구: Android Studio <br>
+                            개발언어: JAVA
+                        </h2>
+                        <p>프로젝트 기간: 2021.04 ~ 2021.06</p>
+                        <h3>기능</h3>
+                        <p>
+                            <ol>
+                                <li>습관을 생성하고 관리</li>
+                                <li>달성도에 따라 점수 부여 후 그래프 출력</li>
+                                <li>습관 알림 설정 기능</li>
+                                <li>데일리 기록장</li>
+                            </ol>
+                        </p>
+                        <button id="hideD" onclick="hideDetail_And()">상세 정보 해제</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+
+    
+
+
+
+
+
+    <script>
+        function showDetail_C(){
+            document.querySelector("#detailBox_C").style.display = "block";
+            document.querySelector("#showD1").style.display = "none";
+        }
+        function hideDetail_C(){
+            document.querySelector("#detailBox_C").style.display = "none";
+            document.querySelector("#showD1").style.display = "inline";
+        }
+
+        function showDetail_And(){
+            document.querySelector("#detailBox_And").style.display = "block";
+            document.querySelector("#showD2").style.display = "none";
+        }
+        function hideDetail_And(){
+            document.querySelector("#detailBox_And").style.display = "none";
+            document.querySelector("#showD2").style.display = "inline";
+        }
+    </script>
+</body>
+</html>

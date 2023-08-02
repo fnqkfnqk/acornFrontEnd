@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const pi = 3.14;
+        let r, a, b, c, d;
+        r = prompt("반지름을 입력하세요: ", "");
+        /* 동시에 입력받아서 분할하기 */
+        [a, b] = prompt("가로와 세로 길이를 입력하세요: ").split(" ");
+        [c, d] = prompt("삼각형의 가로와 높이를 입력하세요: ").split(" ");
+
+        result = r * r * pi;
+        result2 = a * b;
+        result3 = (c * d) / 2; 
+        document.write("원의 넓이는 : " + result + "입니다.<br>");
+        document.write("사각형의 넓이는 : " + result2 + "입니다.<br>");
+        document.write("삼각형의 넓이는 : " + result3 + "입니다.<br>");        
+    </script>
+</body>
+</html>

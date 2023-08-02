@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원근감</title>
+    <style>
+        .origin{
+            width: 150px;
+            height: 150px;
+            margin: 30px;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        .rotatex:hover{
+            transform: rotateX(50deg);
+        }
+        .rotatey:hover{
+            transform: rotateY(50deg);
+        }
+        #pers1, #pers2 {
+            perspective: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="origin"> <!-- 오리지널 사진-->
+        <img src="../images/background1.jpg" alt="">
+    </div>
+    <div class="origin"> <!-- 부모 요소에서 효과를 준다. -->
+        <div class="rotatex">
+            <img src="../images/background1.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin"> 
+        <div class="rotatey">
+            <img src="../images/background1.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin" id="pers1"> <!-- 원근감 -->
+        <div class="rotatex">
+            <img src="../images/background1.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin" id="pers2"> <!-- 오리지널 사진-->
+        <div class="rotatey">
+            <img src="../images/background1.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

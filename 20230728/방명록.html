@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록</title>
+</head>
+<style>
+    #container{
+        width: 400px;
+        min-height: fit-content;
+        border: 1px solid black;
+    }
+    ul{
+        list-style: none;
+    }
+    table{
+        border: 1px solid rgb(30, 193, 30);
+        width: 100%;
+    }
+    thead, th{
+        border: 1px double blue;
+    }
+    tbody, td{
+        width: 100%;
+        height: fit-content;
+        border: 1px solid red;
+    }
+    th, td{
+        width: 200px;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <h2>방명록</h2>
+        <form action="">
+            <ul>
+                <li>
+                    <label for="name">이 름</label>
+                    <input type="text" name="name" id="name">
+                </li>
+                <li>
+                    <label for="place">방문한 곳</label>
+                    <input type="text" name="place" id="place">
+                </li>
+            </ul>
+        </form>
+        <button type="submit" id="submitBtn">기록하기</button>
+        <div>
+            <table>
+                <thead>                
+                    <tr>
+                        <th>이름</th>
+                        <th>방문한 곳</th>
+                    </tr>
+                </thead>
+
+                <tbody class="list"></tbody>
+            </table>
+        </div>
+        <div></div>
+    </div>
+    
+    <script>
+        let visitedList = [];
+        let name = document.querySelector("#name");
+        let place = document.querySelector("#place");
+        let list = document.querySelector(".list");
+        const submitBtn = document.querySelector("#submitBtn");
+
+        submitBtn.addEventListener("click", getList);
+        
+        function getList(){
+            newName = name.value;
+            newPlace = place.value;
+
+            console.log(newName);
+            console.log(newPlace);
+
+            if((newName != null) && (newPlace != null)){
+                visitedList.push([newName, newPlace]);
+                name.value = "";
+                place.value = "";
+            }
+            localStorage.setItem('visitList', JSON.stringify(visitedList));
+            writeList()
+        }
+
+        function writeList(){
+
+            console.log(visitedList);
+            console.log(visitedList.length);
+            
+            let List ="";
+            
+            for(let i=0; i<visitedList.length; i++){
+                List += `<tr><td>${visitedList[i][0]}</td>
+                        <td>${visitedList[i][1]}</td></tr>`;
+            }
+            
+            list.innerHTML = List;
+        }
+    </script>
+</body>
+</html>

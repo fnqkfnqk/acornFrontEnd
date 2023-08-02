@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백그라운드스크롤</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            position: absolute;
+            color: aliceblue;
+            text-align: center;
+            font-size: 70px;
+            font-weight: 800;
+        }
+        p{
+            position: absolute;
+            left: 100px;
+            top: 300px;
+            color:aliceblue;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 300;
+        }
+        .section1{
+            height: 700px;
+            background: url(../images/background1.jpg) no-repeat 50% 0 fixed;
+            background-size: cover;
+            position: relative;
+        }
+        .section2{
+            height: 700px;
+            background: url(../images/background2.jpg) no-repeat 50% 0 scroll; /* 스크롤이 디폴트 */
+            background-size: cover;
+        }
+        .section3{
+            height: 700px;
+            background: url(../images/background3.jpg) no-repeat 50% 0 fixed;
+            background-size: cover;
+            position: relative;
+        }
+        .section4{
+            height: 700px;
+            background: url(../images/background4.jpg) no-repeat 50% 0 scroll;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<!-- 
+    position: absolute; 는 부모의 위치를 기반으로 해서 위치를 잡는다.
+    body 태그만 기본으로 relative(부모) 속성을 가지고 있기 때문에
+    따로 relative를 지정하지 않으면 body 태그를 기준으로 absolute 위치가 움직인다.
+    따라서 이 파일에서는 section마다 relative 속성을 부여하고
+    p태그에 위치를 조정하면 된다.
+    아니면 p 태그를 relative로 설정해서
+-->
+
+
+
+<body>
+    <div class="wrap">
+        <section class="section1">
+            <h3>WEB FRONTED</h3>
+            <p>
+                이거는 이곳이고 이러하며 이러한게 특징이다.1 <br>
+                언제부터 언제는 어떻게 보이며 <br>
+                언제부터 언제는 어떻게 보인다. <br>
+            </p>
+        </section>
+        <section class="section2">
+            <h3>WEB FRONTED2</h3>
+            <p>
+                이거는 이곳이고 이러하며 이러한게 특징이다.2 <br>
+                언제부터 언제는 어떻게 보이며 <br>
+                언제부터 언제는 어떻게 보인다. <br>
+            </p>
+        </section>
+        <section class="section3">
+            <h3>WEB FRONTED3</h3>
+            <p>
+                이거는 이곳이고 이러하며 이러한게 특징이다.3 <br>
+                언제부터 언제는 어떻게 보이며 <br>
+                언제부터 언제는 어떻게 보인다. <br>
+            </p>
+        </section>
+        <section class="section4">
+            <h3>WEB FRONTED4</h3>
+            <p>
+                이거는 이곳이고 이러하며 이러한게 특징이다.4 <br>
+                언제부터 언제는 어떻게 보이며 <br>
+                언제부터 언제는 어떻게 보인다. <br>
+            </p>
+        </section>
+    </div>
+</body>
+</html>

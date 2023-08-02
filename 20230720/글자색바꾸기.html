@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자색 바꾸기</title>
+</head>
+<body>
+    <button id="change">글자색 바꾸기</button>
+    <p>소리쳐 이름을 불러볼까 30분 쯤은 기억해줄까</p>
+
+    <script>
+
+        
+
+        // 1번
+        // 기능을 묶어주는 함수
+        /*
+        let changeBtn = document.querySelector("#change")
+        changeBtn.onclick = changeColor;
+        function changeColor(){
+            document.querySelector("p").style.color = "lightblue";
+        }
+        */
+        
+
+        // 2번
+        // 웹 요소를 따로 변수로 만들지 않고 사용
+        document.querySelector("#change").onclick = changeColor;
+        function changeColor(){
+            document.querySelector("p").style.color = "lightcoral"
+        }
+
+        // 3번
+        // 함수를 직접 선언
+        // document.querySelector("#change").onclick = function(){
+        //     document.querySelector("p").style.color = "red";
+        // }
+
+    </script>
+</body>
+</html>

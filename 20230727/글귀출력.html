@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글귀 출력</title>
+    <style>
+        @font-face {
+            font-family: 'iceSotong-Rg';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/iceSotong-Rg.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body{
+            font-family: 'iceSotong-Rg';
+            font-size: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let present = [];
+
+        present[0] = "아무것도 하지 않으면 아무것도 일어나지 않는다.";
+        present[1] = "자나 깨나 말조심";
+        present[2] = "모든 사람들로부터 사랑받지 않아도 된다.";
+        present[3] = "어떻게 말할까 하고 괴로울 땐 진실을 말해라.";
+        present[4] = "굳이 특별해지기 위해 애쓰지 않는 순간부터 삶은 조금씩 내 것이 된다.";
+        present[5] = "남들과 똑같이 한 걸 가지고 열심히 했다 말하지 마라";
+        present[6] = "피할 수 없으면 즐겨라";
+        present[7] = "가장 큰 위험은 위험 없는 삶이다.";
+        present[8] = "젊은이는 꿈을 먹고 살고, 늙은이는 추억을 먹고 산다.";
+        present[9] = "행복은 습관이다 그것을 몸에 지녀라";
+
+        console.log(present.length);
+        let index = parseInt(Math.random() * (present.length));
+        console.log(index);
+
+        document.write(`<p>&quot; ${present[index]} &quot;</p>`)
+    </script>
+</body>
+</html>

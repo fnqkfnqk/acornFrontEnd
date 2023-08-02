@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문 하기</title>
+    <style>
+        input[type="checkbox"], input[type="radio"]{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #999;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"]:checked, input[type="radio"]:checked {
+            background: #324de7;
+            border: none;
+        }
+        
+        ul{
+            list-style: none;
+        }
+        ul li{
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>총 주문 가격</h1>
+        <fieldset>
+            <legend>기본 가격</legend>
+            <ul>
+                <li>
+                    <input type="radio" name="Kit" id="shortSleave" value="138000" class="basic">
+                    <label for="shortSleave"> S/S (₩138,000)</label>
+                </li>
+                <li>
+                    <input type="radio" name="Kit" id="longSleave" value="152000" class="basic">
+                    <label for="longSleave"> L/S (₩152,000)</label>
+                </li>
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend> 추가 </legend>
+            <ul>
+                <li>
+                    <input type="checkbox" name="playerMarking" id="playerMarking" value="39000" class="option">
+                    <label for="playerMarking">선수 마킹 (₩39,000)</label>
+                </li>
+                <li>
+                    <input type="radio" name="League" id="League" value="15000" class="radioOption">
+                    <label for="">리그 패치 (₩15,000)</label>
+                </li>
+                <li>
+                    <input type="radio" name="League" id="cLeague" value="35000" class="radioOption">
+                    <label for="">챔피언스리그 패치 (₩35,000)</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="CWC" id="CWC" value="18000" class="option">
+                    <label for="CWC">클럽월드컵 패치 (₩18,000)</label>
+                </li>
+                <li>
+                    <input type="radio" name="Delivery" id="nDeli" value="15000" class="radioOption">
+                    <label for="">일반 배송 (₩15,000)</label>
+                </li>
+                <li>
+                    <input type="radio" name="Delivery" id="eDeli" value="35000" class="radioOption">
+                    <label for="">익스프레스 배송 (₩35,000)</label>
+                </li>
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend> 합계 </legend>
+            <div id="totalPrice">0원</div>
+        </fieldset>
+    </div>
+
+    <script>
+        let $totalPrice = document.getElementById('totalPrice');
+        let $options = document.querySelectorAll('.option');
+        let $radioOptions = document.querySelectorAll('.radioOption');
+
+        let sum = 0;
+
+        // 체크 박스에 이벤트 추가하기
+        for(let i=0; i<$options.length; i++){
+            $options[i].addEventListener("click", function(){
+                if(this.checked){
+                    sum += parseInt(this.value);
+                }
+                else{
+                    sum -= parseInt(this.value);
+                }
+                $totalPrice.innerHTML = `${sum}원`;
+            });
+        }
+
+        // 라디오 버튼에 이벤트 추가하기
+        for(let i=0; i<$radioOptions.length; i++){
+            $radioOptions[i].addEventListener("change", function(){
+                if(this.checked){
+                    sum += parseInt(this.value);
+                }
+                else{
+                    sum -= parseInt(this.value);
+                }
+                $totalPrice.innerHTML = `${sum}원`;
+            });
+        }
+
+    </script>
+</body>
+</html>

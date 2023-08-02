@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 6px;
+            border: 1px solid aqua;
+            background-color: lightblue;
+            display: inline-block;
+            line-height: 1.5;
+            width: 130px;
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+            margin: 20px auto;
+            border: 1px solid salmon;
+            background-color: lightcoral;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for(let i=1;i<=6;i++){
+            document.write("<div>");
+            document.write("<h3>"+i+"단</h3>");
+            for(let j=1;j<=9;j++){
+                document.write(i+" * "+j+ " = " + i*j + "<br>");
+            }
+            document.write("<br>");
+            document.write("</div>");
+        }
+    </script>
+</body>
+</html>

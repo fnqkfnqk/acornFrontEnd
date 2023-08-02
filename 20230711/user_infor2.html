@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 정보 입력</title>
+
+    <style>
+        fieldset{
+            width: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div id="container">
+            <h2>회원 정보 입력</h2>
+    
+            <fieldset>
+                <legend>로그인 정보</legend>
+    
+                <table>
+                    <tr>
+                        <td>
+                            <label for="u_id">아이디</label>
+                        </td>
+                        <td>
+                            <input type="text" id="u_id" autofocus required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="u_pw">비밀번호</label>
+                        </td>
+                        <td>
+                            <input type="password" id="u_pw" size="13" maxlength="13" required>
+                        </td>
+                        <td>
+                            <input type="button" value="로그인">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+    
+            <fieldset>
+                <legend>추가 정보</legend>
+    
+                <table>
+                    <tr>
+                        <td>메일 주소</td>
+                        <td>
+                            <input type="email" id="u_mail">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>메일 수신</td>
+                        <td>
+                            <input type="radio" name="mailing" id="mailing_y" checked>
+                            <label for="mailing_y">메일 수신 동의</label>
+    
+                            <input type="radio" name="mailing" id="mailing_n">
+                            <label for="mailing_n">메일 수신 거부</label>
+                        </td>
+                    </tr>
+                </table>
+    
+                <br>
+    
+                <table>
+                    <tr>
+                        <td>연락처</td>
+                        <td>
+                            <input type="tel" id="u_num" placeholder="-를 빼고 입력하세요.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>생년월일</td>
+                        <td>
+                            <input type="birth" id="u_birth" placeholder="YYYY:MM:DD">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>취미</td>
+                        <td>
+                            <input type="checkbox" name="hobby" id="read" value="h_read">
+                            <label for="read">독서</label>
+                            <input type="checkbox" name="hobby" id="listen_2_music" value="h_listen">
+                            <label for="listen_2_music">음악 감상</label>
+                            <input type="checkbox" name="hobby" id="exercise" value="h_exercise">
+                            <label for="exercise">운동</label>
+                        </td>
+                    </tr>
+                </table>
+    
+                <br>
+                
+                <table>
+                    <tr>
+                        <td>
+                            <label for="path">가입 경로</label>
+                        </td>
+                        <td>
+                            <select id="path">
+                                <option value="">블로그</option>
+                                <option value="">검색</option>
+                                <option value="">지인추천</option>
+                                <option value="">기타</option>
+                            </select> 
+                        </td>
+                    </tr>
+                </table>
+    
+                <br>
+                
+                <table>
+                    <tr>
+                        <td>메모</td>
+                        <td>
+                            <textarea name="" id="" cols="30" rows="10" placeholder="자유롭게 의견을 남겨주세요."></textarea>
+                        </td>
+                    </tr>
+                </table>       
+            </fieldset>
+    
+            <br>
+                
+                <div id="buttons">
+                    <input type="submit" value="제줄">
+                </div>  
+        </div>
+        
+        <aside>
+            <img src="" alt="">
+        </aside>
+    </form>
+    
+</body>
+
+</html>

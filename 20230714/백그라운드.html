@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백그라운드</title>
+    <style>
+        section{
+            width: 400px;
+            height: 400px;
+
+            border: 1px solid black;
+            background-image: url(../images/background1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /*
+            background-repeat: no-repeat; - 배경을 반복하지 않는다.
+            background-repeat: repeat-x; - 가로로 이미지 반복
+            background-repeat: repeat-y; - 세로로 이미지 반복
+
+            background-position: center; - 이미지의 가운데로
+            background-position: right bottom; - 이미지의 오른쪽 아래로
+            background-position: 20px 60px; 이미지의 위치 x20 y60로
+            background-position: 100% 50%; - 이미지의 오른쩍 끝 위에서 중앙
+            background-size: contaion; - 비율유지 영역 안에 가득 채우기
+            background-size: cover; - 배경 이미지가 잘리더라도 가득 채운다.
+        */
+        article{
+            height: 1000px;
+            width: 1000px;
+            border: 1px solid;
+            background-image: url(../images/background2.jpg), url(../images/background1.jpg);
+            background-size: 512px 512px, 512px 512px;
+            background-repeat: no-repeat, repeat;
+            background-position: 50% 50%, 50% 50%;
+        }
+    </style>
+</head>
+<body>
+    <section></section>
+    <article></article>
+</body>
+</html>

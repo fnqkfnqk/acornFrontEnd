@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function sumMulti(x,y){ // 매개변수
+            if (x==y){
+                return x*y;
+            }
+            else{
+                return x+y;
+            }
+        }
+
+        console.log(sumMulti(2,3));
+
+        let num1 = parseInt(prompt("비교할 첫 번째 숫자: "));
+        let num2 = parseInt(prompt("비교할 두 번째 숫자: "));
+
+        // 정수로 변환, parseFloat 실수(소수점)
+
+        compareTwo(num1, num2);
+
+        function compareTwo(n1, n2){
+            if (n1 == n2){
+                alert(`${n1}와 ${n2}는 같다.`)
+            }
+            else if(n1 > n2){
+                alert(`${n1}이 ${n2}보다 크다.`)
+            }
+            else{
+                alert(`${n1}이 ${n2}보다 작다.`)
+            }
+        }
+
+    </script>
+</body>
+</html>

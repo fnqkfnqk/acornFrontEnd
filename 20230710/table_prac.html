@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>talbe 예제 P.93~94</title>
+    <style>
+        table{
+            width: 400px;
+            height: 200px;
+        }
+        th{
+            width: 40px;
+            height: 35px;
+            padding: 15px;
+        } 
+        td{
+            width: 40px;
+            height: 45px;
+        }
+    </style>
+</head>
+<body>
+    <h3>상품 구성</h3>
+
+    <table border=>
+        <!-- 표 제목 설정 -->
+        <caption>실속형 & 고급형 상품 구성</caption>
+        
+        <!-- 열 속성 -->
+        <colgroup>  
+            <!-- 첫 번째 열-->
+            <col style="background-color: #eee;">
+            <!-- 두 번째 열-->
+            <col>
+            <!-- 세 번째 열-->
+            <col style="width: 150px;">
+            <!-- 네 번째 열-->
+            <col style="width: 150px;">
+        </colgroup>
+        
+        <!-- 행 제목 설정 -->
+        <thead>
+            <tr>
+                <th>용도</th> <th>중량</th> <th>개수</th> <th>가격</th>
+            </tr>
+        </thead>
+
+        <!-- 행 입력 -->
+        <tbody>
+            <tr>
+                <td rowspan="2">실속형</td> <td>3kg</td> <td>11~16과</td> <td>17,000원</td>
+            </tr>
+            <tr>
+                <td>5kg</td> <td>18~25과</td> <td>25,000원</td>
+            </tr>
+            <tr>
+                <td rowspan="2">고급형</td> <td>3kg</td> <td>11~16과</td> <td>28,000원</td>
+            </tr>
+            <tr>
+                <td>5kg</td> <td>18~25과</td> <td>47,000원</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

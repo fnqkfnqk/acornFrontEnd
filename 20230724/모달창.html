@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #modal-box{
+            border: 1px solid;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(128, 128, 128, 0.275);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        #modal-box.open{
+            display: flex;
+        }
+        #modal-contents{
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            padding: 50px;
+        }
+        #modal-box.open{
+            display: flex;
+        }
+        #modal-box.close{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="open"> 프로필 보기 </button>
+
+    <div id="modal-box">
+        <div id="modal-contents">
+            <span id="title">My Profile</span>
+            <button id="close"> 닫기 X </button>
+        </div>
+    </div>
+
+
+
+    <script>
+        const open = document.querySelector("#open");
+        const close = document.querySelector("#close");
+        const modalBox = document.querySelector("#modal-box");
+
+        open.addEventListener("click", () => {
+            // modalBox.classList.add("active");   // 클릭하면 classlist에 .active 스타일을 추가할 수 있다.
+            // 토글
+            modalBox.classList.toggle("open");
+            // modalBox.classList.toggle("close");
+        })
+        close.addEventListener("click", () => {
+            // modalBox.classList.remove("active");   // 클릭하면 classlist에 .active 스타일을 제거할 수 있다.
+            // 토글
+            // modalBox.classList.toggle("close");
+            modalBox.classList.toggle("open");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        main{
+            height: 750px;
+        }
+        .main_header{
+            display: flex;
+        }
+        .navigation_bar{
+            display: flex;
+        }
+        .nav{
+            width: 100px;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav:hover{
+            background-color: lightgray;
+        }
+
+        .main_image{
+            height: 700px;
+            width: 100%;
+            background-size: cover;
+            background-image: url(../images/bluebottle_main.jpeg);
+            position: relative;
+        }
+        .mention{
+            height: fit-content;
+            width: 300px;
+            position: relative;
+            top: -350px;
+            left: 72%;
+        }
+        .welcome_mention_EN{
+            font-size: 15px;
+            color: rgb(242, 242, 242);
+        }
+        .welcome_mention_KO{
+            font-size: 40px;
+            color: rgb(242, 242, 242);
+        }
+        .btn1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(74, 164, 220);
+            width: 100px;
+            height: 20px;
+            
+            font-size: 13px;
+        }
+        .connect_sns{
+            font-size: 15px;
+        }
+        .SNS{
+            display: flex;
+            left: 20px;
+        }
+        .sns{
+            margin: 7px;            
+        }
+        a{
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        .nav_{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header class="main_header">
+            <div class="main_logo"><a href="#"><img src="../images/bluebottle_logo.png" alt="" width="50px" height="50px"></a></div>
+            <nav class="navigation_bar">
+                <a href="#" class="nav_"><div class="nav">ABOUT</div></a>
+                <a href="#" class="nav_"><div class="nav">CAFES</div></a>
+                <a href="#" class="nav_"><div class="nav">MENU</div></a>
+                <a href="#" class="nav_"><div class="nav">COMPANY</div></a>
+                <a href="#" class="nav_"><div class="nav">NEWS</div></a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="main_image"></div>
+            <section class="mention">
+                <div class="welcome_mention_EN">WELCOME EVERYONE</div>
+                <div class="welcome_mention_KO">블루보틀에 오신 것을 환영합니다.</div>
+                <a href="#"><div class="btn1">블루보틀 소개</div></a>
+            </section>
+            
+        </main>
+
+        <footer>
+            <div class="connect_sns">CONNECT WITH US</div>
+            <section class="SNS">
+                <div class="sns instagram"><a href="#"><img src="../images/instagram_black.png" alt="" width="30px" height="30px"></a></div>
+                <div class="sns facebook"><a href="#"><img src="../images/facebook_black.jpeg" alt="" width="30px" height="30px"></a></div>
+            </section>
+        </footer>
+    </div>
+    
+</body>
+</html>

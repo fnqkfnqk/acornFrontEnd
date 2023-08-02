@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생일입력</title>
+</head>
+<body>
+    <script>
+        /*  
+            const 변하지 않는 상수를 입력받을 때 사용
+            var 변수선언할 때 사용
+            let 에크마6버전부터 사용
+        */
+       const currentYear = 2023;
+       let birthYear;
+
+       birthYear = prompt("태어난 연도를 입력해라.(YYYY)", " ");
+
+       age = currentYear - birthYear;
+       
+       document.write("현재 년도: " + currentYear + "<br><br>");
+       document.write("출생 년도: " + birthYear + "<br><br>");
+       document.write(age + "살이시네요,,,");
+    </script>
+</body>
+</html>

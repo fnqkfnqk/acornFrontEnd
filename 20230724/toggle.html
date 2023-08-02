@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토글버튼</title>
+    <style>
+        img{
+            width: 200px;
+            height: 150px;
+        }
+        .pic1{
+            display: block;
+        }
+        .pic2{
+            display: none;
+        }
+        .pic1.active{
+            display: none;
+        }
+        .pic2.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/bridge1.jpg" class="pic1">
+    <img src="../images/sky.jpeg" class="pic2">
+    <button class="toggleBtn">토글버튼</button>
+
+    <script>
+        // 상수 선언 시에 const를 사용한다. - 변하지 않음
+        const $toggleBtn = document.querySelector(".toggleBtn");
+        const $pic1 = document.querySelector(".pic1");
+        const $pic2 = document.querySelector(".pic2");
+
+        // add와 remove를 한 번에 사용: toggle
+        $toggleBtn.addEventListener("click", () =>{
+            $pic1.classList.toggle("active");    // active가 없으면 추가, 있으면 빼기
+            $pic2.classList.toggle("active");    // active가 없으면 추가, 있으면 빼기
+        })
+    </script>
+</body>
+</html>

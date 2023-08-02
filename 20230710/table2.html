@@ -1,0 +1,58 @@
+<!-- 테이블 병합하기 -->
+<!-- colspan: 좌우로 병합 -->
+<!-- rowspan: 위아래로 병합 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 500px;
+            height: 200px;
+        }
+        th, td{
+            width: 30px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border>
+        <!-- 테이블 전체에 해당하는 제목 -->
+        <caption>색깔의 종류</caption>
+        <!-- table row(행)을 정의한다. <td><th>를 포함해야만 사용가능-->
+        
+        <thead>
+            <tr>
+                <th>종류</th> <th colspan="2" style="background-color: yellowgreen;">밝은계열</th> <th>어두운 계열</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <!-- 테이블 내용을 입력한다. -->
+            <tr>
+                <td>1</td> <td>빨강</td> <td>분홍색</td> <td>검정</td>
+            </tr>
+
+            <tr>
+                <td>2</td> <td>파랑</td> <td rowspan="2" style="background-color: lightblue;">하늘색</td> <td>남색</td>
+            </tr>
+            <tr>
+                <td>3</td> <td>노랑</td> <td>회색</td>
+            </tr>      
+        </tbody>
+        
+        <tfoot>
+            <tr> 
+                <td>합계</td> <td>2개</td> <td>2개</td> <td>2개</td>
+            </tr>
+        </tfoot>
+    </table>    
+</body>
+
+</html>

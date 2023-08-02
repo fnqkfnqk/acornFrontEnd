@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 호버 버튼 가로 폰트 */
+        @import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+        /* 호버 버튼 세로 폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+        ul{
+            list-style: none;
+        }
+        .li1{
+            font-family: 'Jeju Hallasan', cursive;
+            display: inline;
+            border: solid 2px darkcyan;
+            background-color: lightcyan;
+            font-weight: bold;
+            margin: 5px;
+            padding: 5px 20px;
+        }
+        .li1:hover{
+            background-color: aquamarine;
+        }
+        .li2{
+            font-family: 'Bagel Fat One', cursive;
+            border: solid 2px coral;
+            background: lightpink;
+            width: 100px;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        .li2:hover{
+            background-color: lightsalmon;
+        }
+        .a1{
+            text-decoration: none;
+            color: darkblue;
+        }
+        .a2{
+            text-decoration: none;
+            color: red;
+        }
+        dd{
+            display: inline;
+            margin: 10px;
+            padding: 5px 20px;
+        }
+        img{
+            box-shadow: 5px 5px 5px #514d4d82;
+        }
+        img:hover{
+            box-shadow: 3px 3px 3px black;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <ul class="btn1">
+        <a href="#" class="a1"><li class="li1">공지 사항</li></a>
+        <a href="#" class="a1"><li class="li1">제출 버튼</li></a>
+        <a href="#" class="a1"><li class="li1">초기화 버튼</li></a>
+        <a href="#" class="a1"><li class="li1">동영상 강의</li></a>
+    </ul>
+    <br>
+    <hr>
+    <br>
+    <dl>
+        <a href="#"><dd><img src="../images/img1.jpeg" alt="" width="100" height="90"></dd></a>
+        <a href="#"><dd><img src="../images/img2.jpeg" alt="" width="100" height="90"></dd></a>
+        <a href="#"><dd><img src="../images/img3.jpeg" alt="" width="100" height="90"></dd></a>
+    </dl>
+    <br>
+    <hr>
+    <br>    
+    <ul>
+        <a href="#" class="a2"><li class="li2">수강 신청</li></a>
+        <a href="#" class="a2"><li class="li2">강의 평가</li></a>
+        <a href="#" class="a2"><li class="li2">성적 확인</li></a>
+        <a href="#" class="a2"><li class="li2">시간표 확인</li></a>
+        <a href="#" class="a2"><li class="li2">학점 포기</li></a>
+    </ul>  
+</body>
+</html>

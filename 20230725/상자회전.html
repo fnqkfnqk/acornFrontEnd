@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상자 회전</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: bisque;
+            margin: 50px;
+        }
+        a{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="turnLeft">왼쪽으로 회전</a>
+    <a href="#" id="turnRight">오른쪽으로 회전</a>
+    <a href="#" id="scale1"> 확대 </a>
+    <a href="#" id="scale2"> 축소 </a>
+    <a href="#" id="scale3"> 초기화 </a>
+    <div id="box"></div>
+    
+    <script>
+        const $turnLeft = document.getElementById("turnLeft");
+        const $turnRight = document.getElementById("turnRight");
+        const $scale1 = document.getElementById("scale1");
+        const $scale2 = document.getElementById("scale2");
+        const $scale3 = document.getElementById("scale3");
+        const $box = document.getElementById("box");
+
+        let now = 0
+
+        $turnLeft.addEventListener("click", e => {
+            e.preventDefault();
+            now -= 20;
+            $box.style.transform = `rotate(${now}deg)`;
+        })
+        $turnRight.addEventListener("click", e => {
+            e.preventDefault();
+            now += 20;
+            $box.style.transform = `rotate(${now}deg)`;
+        })
+        $scale1.addEventListener("click", e => {
+            e.preventDefault();
+            $box.style.scale = 1.5;
+        })
+        $scale2.addEventListener("click", e => {
+            e.preventDefault();
+            $box.style.scale = 0.6;
+        })
+        $scale3.addEventListener("click", e => {
+            e.preventDefault();
+            $box.style.scale = 1;
+            now = 0;
+            $box.style.transform = `rotate(${now}deg)`;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="get_time">
+            <input type="text" name="min" id="min">분
+            <input type="text" name="sec" id="sec">초
+            <button id="startBtn">START</button>
+            <button id="resetBtn">RESET</button>
+        </div>
+        <div class="timer"></div>
+    </div>
+
+    <script>
+        let $min = document.querySelector("#min");
+        let $sec = document.querySelector("#sec");
+        let timer = document.querySelector(".timer");
+        let timerC;
+        let min, sec;
+        const startBtn = document.querySelector("#startBtn");
+        const resetBtn = document.querySelector("#resetBtn");
+
+        startBtn.addEventListener("click", startTimer);
+
+        function startTimer(){
+            min = $min.value;
+            sec = $sec.value;
+
+            if(min == "") min = 0;
+            if(sec == "") sec = 0;
+
+            timerC = setInterval(countTimer, 1000);
+        }
+
+        function countTimer(){
+            timer.innerHTML = `${min} : ${sec}`;
+            if(sec!=0){
+                sec--;
+            }
+            else{
+                if(min!=0){
+                    min--;
+                    sec=59
+                }
+                else{
+                    timer.innerHTML = `타이머 종료`;
+                    clearTimer(timerC);
+                }
+            }
+        }
+        function clearTimer(t){
+            clearInterval(t);
+            $min.value ="";
+            $sec.value ="";
+        }
+
+    </script>
+</body>
+</html>

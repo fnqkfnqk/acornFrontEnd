@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            display: flex;
+        }
+        div{
+            margin: 1px;
+            height: 30px;
+            width: 150px;
+            text-align: center;
+            border: 1px solid rgb(104, 207, 1);
+            background-color: chartreuse;
+        }
+        .home_btn{
+            border: 1px solid lightcoral;
+            background-color: rgb(220, 204, 134);
+        }
+        .home_btn2{
+            border: 1px solid lightcoral;
+            background-color: rgb(220, 204, 134);
+        }
+        .home_btn3{
+            border: 1px solid lightcoral;
+            background-color: rgb(220, 204, 134);
+        }
+        .sub_home{
+            display: none;
+        }
+        .sub_home2{
+            display: none;
+        }
+        .sub_home3{
+            display: none;
+        }
+        .home_btn:hover{
+            background-color: aqua;
+        }
+        .home_btn2:hover{
+            background-color: yellow;
+        }
+        .home_btn3:hover{
+            background-color: firebrick;
+        }
+        .mm:hover .sub_home {
+            display: block;
+        }
+        .mm2:hover .sub_home2 {
+            display: block;
+        }
+        .mm3:hover .sub_home3 {
+            display: block;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mm">
+            <div class="home_btn"> 마이 페이지 </div>    
+            <section class="sub_home">
+                <div class="change_pw">비밀번호 변경</div>
+                <div class="hi"> 아녕 </div>
+                <div class="bye"> 잘가 </div>
+            </section>
+        </div>
+
+        <div class="mm2">
+            <div class="home_btn2"> MENU2 </div>    
+            <section class="sub_home2">
+                <div class="change_pw2">비밀번호 변경</div>
+                <div class="hi2"> 아녕 </div>
+                <div class="bye2"> 잘가 </div>
+            </section>
+        </div>
+
+        <div class="mm3">
+            <div class="home_btn3"> MENU3 </div>    
+            <section class="sub_home3">
+                <div class="change_pw3">비밀번호 변경</div>
+                <div class="hi3"> 아녕 </div>
+                <div class="bye3"> 잘가 </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

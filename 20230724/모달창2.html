@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #modal-box{
+            background-color: rgba(128, 128, 128, 0.145);
+            display: flex;
+            width: 300px;
+            height: 170px;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        #modal-box div{
+            margin: 10px;
+        }
+        button{
+            background-color: bisque;
+            width: 150px;
+            height: 40px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .photo{
+            background-image: url(../portfolio/images/나2.jpeg);
+            width: 70px;
+            height: 70px;
+            background-size: cover;
+        }
+        .information{
+            list-style: none;
+        }
+        #modal-box.open{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h3>궁금해? 눌러봐!</h3>
+    <button id="open">프로필</button>
+    <div id="modal-box">
+            <div class="photo"></div>
+            <div>
+                <ul class="information">
+                    <li>이름: 홍근혁</li>
+                    <li>생년월일: 1994.04.02</li>
+                    <li>MBTI: ESTJ</li>
+                    <li>연락처: 010-7186-1719</li>
+                </ul>
+            </div>
+            <button id="close">닫기 X</button>
+        
+    </div>
+
+    <script>
+        const open = document.querySelector("#open");
+        const close = document.querySelector("#close");
+        const modalBox = document.querySelector("#modal-box");
+
+        open.addEventListener("click", () => {
+            modalBox.classList.toggle("open");
+        })
+        close.addEventListener("click", () => {
+            modalBox.classList.toggle("open");
+        })
+    </script>
+</body>
+</html>

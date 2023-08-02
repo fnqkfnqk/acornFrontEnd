@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input_div{
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            height: 40px;
+        }
+        .calc_button{
+            width: 200px;
+            height: 30px;
+            border: 1px solid black;
+            background-color: rgba(211, 211, 211, 0.274);
+            text-align: center;
+        }
+        .result{
+            border: 1px solid black;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>최대 공약수 구하기</h1>
+        <p>두 수를 입력한 후 [계산하기]를 클릭하세요.</p>
+
+        <div class="input_div">
+            <input type="text" id="num1" placeholder="첫 번째 수">
+            <input type="text" id="num2" placeholder="두 번째 수">
+        </div>
+
+        <div class="calc_button" id="calc_button">계산하기</div>
+
+        <div class="result" id="result"></div>
+    </div>
+
+
+    <script>
+
+        // function calc_GCD(){
+        //     let num1 = document.querySelector("#num1").value;
+        //     let num2 = document.querySelector("#num2").value;
+        //     let result = document.querySelector("#result");
+        //     console.log(num1, num2)
+
+        //     let max = num1 > num2 ? num2 : num1;
+        //     let GDC = 0
+            
+        //     for(let i=1; i<=max; i++){
+        //         if(num1%i==0 && num2%i ==0){
+        //             GDC = GDC > i ? GDC:i; 
+        //         }
+        //     }
+        //     result.innerHTML = GDC;
+        // }   
+
+        // let num1 = document.querySelector("#num1").value;
+        // let num2 = document.querySelector("#num2").value;
+        let calc_button = document.querySelector("#calc_button");
+        let resultText = document.querySelector("#result");
+
+        calc_button.onclick = function(){
+
+            let num1 = document.querySelector("#num1").value;
+            let num2 = document.querySelector("#num2").value;
+
+            let max_ = num1 > num2 ? num1 : num2;
+            let min_ = num1 < num2 ? num1 : num2;
+
+            resultText.innerHTML = calc_GCD2(max_, min_)
+        }
+
+        function calc_GCD2(num1, num2){
+            console.log(typeof(num1), num1);
+            console.log(typeof(num2), num2);
+            if(num2 == 0){
+                return num1;
+            }
+            else{
+                return calc_GCD2(num2, num1%num2)
+            }
+        }
+
+
+    </script>
+</body>
+</html>
